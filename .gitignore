@@ -1,0 +1,7 @@
+.venv/
+node_modules/
+.vercel/
+.env
+.env.*
+_php-oud/
+.DS_Store
