@@ -429,6 +429,12 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   box-shadow: var(--shadow);
 }
 
+.expertise-layout.reverse { grid-template-columns: minmax(300px, 1fr) minmax(0, .85fr); }
+.expertise-layout.reverse .expertise-visual { order: -1; }
+.check-list { display: grid; gap: 12px; margin: 22px 0 0; padding: 0; list-style: none; }
+.check-list li { position: relative; padding-left: 24px; color: var(--muted); font-size: .96rem; line-height: 1.6; }
+.check-list li::before { content: ""; position: absolute; left: 0; top: .72em; width: 12px; height: 2px; background: var(--amber); }
+.check-list li strong { color: var(--navy); }
 .expertise-visual { margin: 0; }
 .expertise-visual img { display: block; width: 100%; height: auto; border-radius: 6px; }
 
@@ -918,12 +924,14 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   .hero,
   .intro-grid,
   .expertise-layout,
+  .expertise-layout.reverse,
   .ai-section .band-content,
   .vacancies .band-content,
   .contact-section { grid-template-columns: 1fr; }
 
   .hero { min-height: auto; gap: 36px; }
   .hero-panel { max-width: 560px; }
+  .expertise-layout.reverse .expertise-visual { order: 0; }
   .intro-visual { order: -1; }
   .intro-visual img { min-height: 240px; }
 
