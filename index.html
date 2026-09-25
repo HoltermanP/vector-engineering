@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260925-8">
+  <link rel="stylesheet" href="css/style.css?v=20260925-12">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -314,6 +314,52 @@
       </div>
     </section>
 
+    <section id="beheersing" class="section expertise-section">
+      <div class="expertise-layout">
+        <div class="expertise-copy">
+          <p class="section-kicker">Project- en risicomanagement</p>
+          <h2>Grip op voortgang, budget en risico&rsquo;s, vanaf de eerste dag.</h2>
+          <p>
+            Een ontwerp is pas beheersbaar als iedereen dezelfde stand van zaken ziet. Ons projectdashboard volgt elke processtap, laat zien wie wat doet en houdt risico&rsquo;s en kosten actueel naarmate het ontwerp vordert.
+          </p>
+          <ul class="check-list">
+            <li><strong>Projectdashboard:</strong> voortgang per fase, openstaande acties en tollgates in één overzicht.</li>
+            <li><strong>Mens en AI helder verdeeld:</strong> per stap staat vast wat de AI uitvoert en wat een mens beoordeelt; besluiten blijven altijd menselijk.</li>
+            <li><strong>Kans- en risicoregister:</strong> risico&rsquo;s gescoord op geld, tijd, kwaliteit, veiligheid en omgeving, met oorzaak, gevolg en beheersmaatregelen.</li>
+            <li><strong>Begroting per fase:</strong> verwachte uitvoeringskosten automatisch bijgewerkt bij elke doorrekening van het tracé, met vastgelegde snapshots per besluitmoment.</li>
+          </ul>
+        </div>
+
+        <figure class="pm-visual" aria-label="Voorbeeld van het projectdashboard met voortgang, begroting en risicoregister (fictieve gegevens)">
+          <div class="pm-card pm-progress">
+            <div class="pm-ring" style="--p:38"><strong>38%</strong><span>gereed</span></div>
+            <div class="pm-phases">
+              <div class="pm-phase"><span>IV</span><i style="--w:100%"></i><em>10/10</em></div>
+              <div class="pm-phase"><span>VO</span><i style="--w:62%"></i><em>22/35</em></div>
+              <div class="pm-phase"><span>DO</span><i style="--w:12%"></i><em>5/42</em></div>
+            </div>
+          </div>
+
+          <div class="pm-card pm-budget">
+            <span class="pm-label">Verwachte uitvoeringskosten</span>
+            <strong>&euro; 8,7 mln <small>excl. btw</small></strong>
+            <span class="pm-note">Automatisch bijgewerkt bij elke doorrekening van het tracé</span>
+          </div>
+
+          <div class="pm-card pm-risks">
+            <span class="pm-label">Kans- en risicoregister</span>
+            <ul>
+              <li><span class="pm-score hi">48</span><b>Flora en fauna</b><em>Omgeving</em></li>
+              <li><span class="pm-score hi">44</span><b>Eigendom percelen onbekend</b><em>Procesbeheersing</em></li>
+              <li><span class="pm-score mid">42</span><b>KLIC niet gekoppeld</b><em>Veiligheid</em></li>
+              <li><span class="pm-score mid">36</span><b>Ontwerpwijziging na VO</b><em>Procesbeheersing</em></li>
+            </ul>
+          </div>
+          <figcaption>Illustratief voorbeeld met fictieve projectgegevens.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="werkwijze" class="section process-band media-band">
       <div class="band-media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1774599730788-a74cd9253b56?auto=format&fit=crop&w=1600&q=70" alt="" loading="lazy" style="object-position:center 30%"></div>
       <div class="band-overlay" aria-hidden="true"></div>
@@ -327,6 +373,11 @@
             <span class="step-badge" aria-hidden="true">PS</span>
             <h3>Projectstart</h3>
             <p>Scope, uitgangspunten en randvoorwaarden worden helder gemaakt. Elk project start anders; we sluiten aan op de fase waarin jouw project zich bevindt.</p>
+          </li>
+          <li class="process-item">
+            <span class="step-badge" aria-hidden="true">SO</span>
+            <h3>Schetsontwerp</h3>
+            <p>Eerste tracévarianten en globale ligging van kabels en leidingen worden geschetst, met een indicatie van kansen, knelpunten en kosten.</p>
           </li>
           <li class="process-item">
             <span class="step-badge" aria-hidden="true">VO</span>
@@ -361,19 +412,19 @@
         </div>
       </div>
 
-      <figure class="compare" data-gantt aria-label="Doorlooptijd tot het DO: traditioneel circa 18 maanden, VECTOR circa 9 maanden">
+      <figure class="compare" data-gantt aria-label="Doorlooptijd tot het DO: traditioneel 100 procent, VECTOR circa 50 procent van die tijd">
         <div class="compare-row">
-          <div class="compare-meta"><span>Traditioneel</span><strong>~18 maanden</strong></div>
+          <div class="compare-meta"><span>Traditioneel</span><strong>100%</strong></div>
           <div class="compare-track"><span class="gantt-bar bar-trad" style="--w:100%"></span></div>
         </div>
         <div class="compare-row">
-          <div class="compare-meta"><span>VECTOR</span><strong>~9 maanden</strong></div>
+          <div class="compare-meta"><span>VECTOR</span><strong>~50%</strong></div>
           <div class="compare-track">
             <span class="gantt-bar bar-vector" style="--w:50%"></span>
-            <span class="compare-saved" style="--l:50%"><em>≈ 9 maanden bespaard</em></span>
+            <span class="compare-saved" style="--l:50%"><em>≈ 50% bespaard</em></span>
           </div>
         </div>
-        <figcaption>Indicatieve doorlooptijd van opdracht tot en met definitief ontwerp; de werkelijke winst hangt af van projectomvang en vergunningstrajecten.</figcaption>
+        <figcaption>Indicatieve doorlooptijd van opdracht tot en met definitief ontwerp, uitgedrukt in percentage van de traditionele doorlooptijd; de werkelijke winst hangt af van projectomvang en vergunningstrajecten.</figcaption>
       </figure>
 
       <div class="gain-grid">
