@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 const SUBJECTS = [
-  'Energie- en watertransitie engineering',
+  'Engineering ondergrondse infrastructuur',
   'AI-gedreven ontwerpversnelling',
   'Vacature / samenwerking',
   'Anders',
