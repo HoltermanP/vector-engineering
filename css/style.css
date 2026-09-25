@@ -429,7 +429,8 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   box-shadow: var(--shadow);
 }
 
-.expertise-visual svg { display: block; width: 100%; height: auto; }
+.expertise-visual { margin: 0; }
+.expertise-visual img { display: block; width: 100%; height: auto; border-radius: 6px; }
 
 .discipline-grid {
   display: grid;
@@ -477,6 +478,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
+.service-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 
 .service-card.featured {
@@ -551,7 +553,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 
 .process-list {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin: 0 auto;
   padding: 0;
@@ -697,6 +699,15 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 }
 
 .gain-card h3 { font-size: 1.08rem; }
+.assure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 56px; }
+.assure-card { padding: 30px 32px; background: var(--paper, #f6f8f9); border: 1px solid var(--line); border-top: 3px solid var(--amber); border-radius: 10px; }
+.assure-card.assure-safe { border-top-color: var(--green-dark); }
+.assure-card h3 { font-size: 1.25rem; margin-bottom: 16px; }
+.assure-card ul { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.assure-card li { color: var(--muted); font-size: .95rem; line-height: 1.6; }
+.assure-card li strong { color: var(--navy); }
+@media (max-width: 900px) { .assure-grid { grid-template-columns: 1fr; } .assure-card { padding: 24px 22px; } }
+
 .gain-card p { margin-bottom: 0; color: var(--muted); font-size: .94rem; line-height: 1.6; }
 
 /* ---------- AI ---------- */
