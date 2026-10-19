@@ -80,15 +80,19 @@ if (contactForm) {
   });
 }
 
-const gantt = document.querySelector('[data-gantt]');
+const gantts = document.querySelectorAll('[data-gantt]');
 
-if (gantt && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  gantt.classList.add('is-pending');
+if (gantts.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver((entries) => {
-    if (entries.some((entry) => entry.isIntersecting)) {
-      gantt.classList.remove('is-pending');
-      observer.disconnect();
-    }
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('is-pending');
+        observer.unobserve(entry.target);
+      }
+    });
   }, { threshold: 0.25 });
-  observer.observe(gantt);
+  gantts.forEach((gantt) => {
+    gantt.classList.add('is-pending');
+    observer.observe(gantt);
+  });
 }
