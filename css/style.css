@@ -697,7 +697,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   display: block;
   margin: 16px 0 12px;
   font-family: var(--font-head);
-  font-size: 3rem;
+  font-size: 2.3rem;
   font-weight: 700;
   line-height: 1;
   background: var(--gradient-vector);
@@ -707,6 +707,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 }
 
 .gain-card h3 { font-size: 1.08rem; }
+.gain-total { margin: 30px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-size: .9rem; line-height: 1.6; color: var(--muted); }
 .assure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 56px; }
 .assure-card { padding: 30px 32px; background: var(--paper, #f6f8f9); border: 1px solid var(--line); border-top: 3px solid var(--amber); border-radius: 10px; }
 .assure-card.assure-safe { border-top-color: var(--green-dark); }
