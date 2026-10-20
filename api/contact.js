@@ -1,12 +1,5 @@
 import nodemailer from 'nodemailer';
 
-const SUBJECTS = [
-  'Engineering ondergrondse infrastructuur',
-  'AI-gedreven ontwerpversnelling',
-  'Vacature / samenwerking',
-  'Anders',
-];
-
 const OK = 'Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.';
 
 export default async function handler(req, res) {
@@ -24,13 +17,15 @@ export default async function handler(req, res) {
 
   const name = clean(body.name);
   const email = clean(body.email);
-  const subject = clean(body.subject);
+  const company = clean(body.company);
+  const phone = clean(body.phone);
   const message = clean(body.message);
 
   const errors = [];
   if (!name || name.length > 120) errors.push('Vul een geldige naam in.');
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 200) errors.push('Vul een geldig e-mailadres in.');
-  if (!SUBJECTS.includes(subject)) errors.push('Kies een geldig onderwerp.');
+  if (company.length > 200) errors.push('Vul een geldige bedrijfsnaam in.');
+  if (phone && !/^[0-9+()\-\s]{6,30}$/.test(phone)) errors.push('Vul een geldig telefoonnummer in.');
   if (!message || message.length > 5000) errors.push('Vul een bericht in.');
 
   if (errors.length) {
@@ -51,8 +46,8 @@ export default async function handler(req, res) {
       from: { name: 'VECTOR Engineering website', address: SMTP_USER },
       to: MAIL_TO || SMTP_USER,
       replyTo: { name, address: email },
-      subject: `Contactformulier VECTOR Engineering: ${subject}`,
-      text: `Naam: ${name}\nE-mail: ${email}\nOnderwerp: ${subject}\n\nBericht:\n${message}\n`,
+      subject: `Contactformulier VECTOR Engineering: ${company || name}`,
+      text: `Naam: ${name}\nBedrijf: ${company || '-'}\nE-mail: ${email}\nTelefoon: ${phone || '-'}\n\nBericht:\n${message}\n`,
     });
 
     return res.status(200).json({ success: true, message: OK });

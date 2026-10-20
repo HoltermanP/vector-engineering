@@ -633,21 +633,19 @@
         </label>
         <label>
           Naam
-          <input type="text" name="name" placeholder="Je naam" required>
+          <input type="text" name="name" placeholder="Je naam" autocomplete="name" required>
+        </label>
+        <label>
+          Bedrijfsnaam (optioneel)
+          <input type="text" name="company" placeholder="Je bedrijf" autocomplete="organization">
         </label>
         <label>
           E-mail
-          <input type="email" name="email" placeholder="naam@bedrijf.nl" required>
+          <input type="email" name="email" placeholder="naam@bedrijf.nl" autocomplete="email" required>
         </label>
         <label>
-          Onderwerp
-          <select name="subject" required>
-            <option value="">Kies onderwerp</option>
-            <option>Engineering ondergrondse infrastructuur</option>
-            <option>Ontwerpversnelling met onze procestool</option>
-            <option>Vacature / samenwerking</option>
-            <option>Anders</option>
-          </select>
+          Telefoonnummer (optioneel)
+          <input type="tel" name="phone" placeholder="06 12345678" autocomplete="tel">
         </label>
         <label>
           Bericht
