@@ -399,7 +399,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 }
 
 .panel-art { grid-column: 1 / -1; width: 100%; height: 22px; overflow: visible; }
-.panel-art rect, .panel-art circle { fill: rgba(var(--theme-rgb), .18); stroke: var(--theme); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.panel-art rect { fill: rgba(var(--theme-rgb), .18); stroke: var(--theme); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .panel-art .art-base { stroke: rgba(var(--theme-rgb), .3); stroke-width: 2; vector-effect: non-scaling-stroke; }
 .panel-art .art-pipe { fill: none; stroke: rgba(var(--theme-rgb), .55); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .panel-art .art-flow {
