@@ -19,9 +19,6 @@
         <path d="M0,0 L-2.4,-7 L0,-42 L2.4,-7 Z" transform="rotate(240)"/>
         <circle r="3.2"/>
       </g>
-      <g id="pylon" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-10,100 L-2,20 L2,20 L10,100 M0,6 V20 M-15,28 H15 M-12,44 H12 M-7,80 L7,60 M7,80 L-7,60 M-5,60 L5,40 M5,60 L-5,40"/>
-      </g>
     </defs>
   </svg>
 
@@ -97,19 +94,21 @@
         <!-- middelste heuvel -->
         <path d="M0,150 C240,125 460,160 720,140 S1180,120 1440,145 L1440,200 L0,200Z" fill="#0b5a4e"/>
 
-        <!-- masten met stroomlijnen -->
-        <g color="#d6efe6" opacity=".9">
-          <use href="#pylon" transform="translate(300,82) scale(.6)"/>
-          <use href="#pylon" transform="translate(420,92) scale(.6)"/>
-          <use href="#pylon" transform="translate(540,96) scale(.6)"/>
-        </g>
-        <g fill="none" stroke="#d6efe6" stroke-width="1" opacity=".75">
-          <path d="M308.4,98.8 Q360,112 411.6,108.8"/><path d="M306.6,108.4 Q360,124 413.4,118.4"/>
-          <path d="M428.4,108.8 Q480,124 531.6,112.8"/><path d="M426.6,118.4 Q480,134 533.4,122.4"/>
+        <!-- middenspanningsstation met ondergrondse kabels naar zon en wind -->
+        <g fill="none" stroke="#d6efe6" stroke-width="1" stroke-dasharray="3 3" opacity=".6">
+          <path d="M218,151 C270,164 330,164 366,147"/><path d="M408,147 C470,166 700,168 816,162"/>
         </g>
         <g class="pulse" fill="none" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round">
-          <path d="M308.4,98.8 Q360,112 411.6,108.8"/><path d="M306.6,108.4 Q360,124 413.4,118.4"/>
-          <path d="M428.4,108.8 Q480,124 531.6,112.8"/><path d="M426.6,118.4 Q480,134 533.4,122.4"/>
+          <path d="M218,151 C270,164 330,164 366,147"/><path d="M408,147 C470,166 700,168 816,162"/>
+        </g>
+        <g>
+          <rect x="362" y="125" width="48" height="23" rx="1" fill="#d6efe6"/>
+          <rect x="359" y="121" width="54" height="5" rx="1" fill="#b8ddd0"/>
+          <rect x="367" y="130" width="11" height="16" fill="#0b5a4e" opacity=".55"/>
+          <rect x="380" y="130" width="11" height="16" fill="#0b5a4e" opacity=".55"/>
+          <rect x="394" y="130" width="11" height="16" fill="#0b5a4e" opacity=".55"/>
+          <path d="M399.5,132 L403.5,139 L395.5,139Z" fill="#f5a623"/>
+          <path d="M400,133.6 L398.6,136.4 L400.4,136.4 L399.2,138.4" fill="none" stroke="#0b5a4e" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"/>
         </g>
 
         <!-- zonnepanelen -->
