@@ -814,6 +814,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   transition: padding-left .18s ease;
 }
 
+.vacancy-list a:last-child { border-bottom: 0; }
 .vacancy-list a:hover { padding-left: 12px; }
 
 .vacancy-list span {
