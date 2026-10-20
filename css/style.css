@@ -328,50 +328,70 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .hero-panel {
-  display: grid;
-  grid-template-columns: 76px 1fr;
+  position: relative;
   width: 100%;
   margin: 0;
   background: rgba(255, 255, 255, .05);
   border: 1px solid rgba(255, 255, 255, .14);
-  border-radius: 10px;
+  border-radius: 12px;
   backdrop-filter: blur(10px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
   overflow: hidden;
 }
 
-/* procestool: verticale band over alle vakgebieden heen */
+.hero-panel::before { content: ""; display: block; height: 3px; background: var(--gradient-vector); }
+
+/* procestool als kop; een lijn vertakt naar elk vakgebied */
 .panel-tool {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 18px;
-  padding: 18px 0;
-  background: linear-gradient(180deg, rgba(47, 191, 113, .2), rgba(47, 191, 113, .08));
-  border-right: 2px solid var(--green);
+  gap: 14px;
+  padding: 18px 20px;
+  background: linear-gradient(90deg, rgba(47, 191, 113, .2), rgba(47, 191, 113, .04));
+  border-bottom: 1px solid rgba(47, 191, 113, .28);
 }
 
-.panel-tool-text {
-  display: flex;
-  gap: 6px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
+.panel-tool-text { display: grid; gap: 2px; }
 
-.hero-panel .panel-tool strong { letter-spacing: .04em; }
+.hero-panel .panel-tool strong { letter-spacing: .02em; }
 .hero-panel .panel-tool em { color: rgba(255, 255, 255, .7); }
 
-.panel-list { display: grid; }
+.panel-list { display: grid; gap: 10px; padding: 16px 20px 20px 62px; }
 
 .panel-list > div {
+  position: relative;
   display: grid;
   grid-template-columns: 44px 1fr;
   align-items: center;
-  gap: 16px;
-  padding: 18px 22px;
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 10px;
+  transition: background .2s ease, border-color .2s ease;
 }
 
-.panel-list > div:last-child { border-bottom: 0; }
+.panel-list > div:hover { background: rgba(255, 255, 255, .07); border-color: rgba(255, 255, 255, .18); }
+
+/* vertakking: verticale lijn vanaf het tool-icoon, aftakking naar elke kaart */
+.panel-list > div::before {
+  content: "";
+  position: absolute;
+  left: -21px;
+  top: -27px;
+  bottom: -11px;
+  border-left: 2px solid rgba(47, 191, 113, .55);
+}
+.panel-list > div:first-child::before { top: -17px; }
+.panel-list > div:last-child::before { bottom: 50%; }
+.panel-list > div::after {
+  content: "";
+  position: absolute;
+  left: -21px;
+  top: 50%;
+  width: 20px;
+  border-top: 2px solid rgba(47, 191, 113, .55);
+}
 
 .panel-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px; }
 .panel-icon svg { width: 22px; height: 22px; }
