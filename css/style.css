@@ -698,6 +698,8 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .compare figcaption { margin-top: 22px; color: var(--steel); font-size: .82rem; }
 
 .gain-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.gain-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
+.gain-grid-2 .gain-card h3 { font-size: 1.25rem; }
 .gain-card { padding-top: 6px; border-top: 2px solid var(--navy); }
 
 .gain-num {
