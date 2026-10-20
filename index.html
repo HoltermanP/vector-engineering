@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261020-14">
+  <link rel="stylesheet" href="css/style.css?v=20261020-16">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -154,23 +154,36 @@
           </span>
         </div>
         <div class="panel-list">
-          <div>
+          <div class="panel-theme theme-energy">
             <span class="panel-icon panel-icon-amber" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
             </span>
             <span class="panel-text">
               <strong>Energietransitie</strong>
-              <em>10/20 kV-verbindingen, netuitbreiding en duurzame opwek</em>
+              <span class="panel-tags"><span>10/20 kV-verbindingen</span><span>netuitbreiding</span></span>
             </span>
+            <svg class="panel-art" viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true">
+              <rect x="1" y="7" width="22" height="16" rx="2"/>
+              <rect x="277" y="7" width="22" height="16" rx="2"/>
+              <path class="art-base" d="M23 15h254"/>
+              <path class="art-flow" d="M23 15h254"/>
+              <circle cx="100" cy="15" r="3"/><circle cx="200" cy="15" r="3"/>
+            </svg>
           </div>
-          <div>
+          <div class="panel-theme theme-water">
             <span class="panel-icon panel-icon-teal" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c4 5 7 9.2 7 12.8a7 7 0 1 1-14 0C5 11.2 8 7 12 2z"/></svg>
             </span>
             <span class="panel-text">
               <strong>Watertransitie</strong>
-              <em>transportleidingen en ondergrondse aanleg</em>
+              <span class="panel-tags"><span>transportleidingen</span><span>ondergrondse aanleg</span></span>
             </span>
+            <svg class="panel-art" viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true">
+              <path class="art-pipe" d="M1 7h298M1 23h298"/>
+              <path class="art-base" d="M1 15h298"/>
+              <path class="art-flow" d="M1 15h298"/>
+              <path class="art-pipe" d="M100 4v22M200 4v22"/>
+            </svg>
           </div>
         </div>
       </aside>
@@ -536,12 +549,15 @@
       <div class="band-media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1790039139966-1de90bbc7152?auto=format&fit=crop&w=1600&q=70" alt="" loading="lazy" style="object-position:center 55%"></div>
       <div class="band-overlay" aria-hidden="true"></div>
       <div class="band-content">
-        <div>
-          <p class="section-kicker">Samenwerken</p>
-          <h2>Wij helpen netbeheerders, waterbedrijven, aannemers en ingenieursbureaus vooruit.</h2>
-        </div>
-        <div class="vacancy-list">
-          <a href="#contact">Bespreek je engineeringvraagstuk of tracé <span>Neem contact op</span></a>
+        <div class="collab-card">
+          <div>
+            <p class="section-kicker">Samenwerken</p>
+            <h2>Wij helpen netbeheerders, waterbedrijven, aannemers en ingenieursbureaus vooruit.</h2>
+          </div>
+          <div class="collab-cta">
+            <p>Bespreek je engineeringvraagstuk of tracé met ons.</p>
+            <a class="button primary" href="#contact">Neem contact op <span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
     </section>
