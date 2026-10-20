@@ -508,6 +508,100 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .expertise-visual { margin: 0; }
 .expertise-visual img { display: block; width: 100%; height: auto; border-radius: 6px; }
 
+/* ZRO-voorbeeld: kaart met statusstappen per perceel, zonder bedragen */
+.zro-map { position: relative; border-radius: 6px; overflow: hidden; }
+.zro-map img { aspect-ratio: 913 / 695; object-fit: cover; }
+
+.zro-card {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: min(250px, 50%);
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, .96);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(5, 35, 38, .25);
+}
+.zro-card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.zro-card-head strong { color: var(--navy); font-family: var(--font-head); font-size: 1.15rem; }
+.zro-badge, .zro-state {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(245, 166, 35, .16);
+  color: var(--amber-dark);
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.zro-card-meta { margin: 2px 0 14px; color: var(--muted); font-size: .86rem; }
+
+.zro-steps { display: grid; margin: 0; padding: 0; list-style: none; counter-reset: zro; }
+.zro-steps li {
+  position: relative;
+  padding: 0 0 12px 30px;
+  color: var(--steel);
+  font-size: .9rem;
+  line-height: 20px;
+  counter-increment: zro;
+}
+.zro-steps li:last-child { padding-bottom: 0; }
+.zro-steps li::before {
+  content: counter(zro);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  background: var(--white);
+  font-size: .7rem;
+  font-weight: 700;
+}
+.zro-steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 22px;
+  bottom: 2px;
+  border-left: 2px solid var(--line);
+}
+.zro-steps li.is-done { color: var(--navy); }
+.zro-steps li.is-done::before { content: "\2713"; border-color: var(--green); background: var(--green); color: var(--white); }
+.zro-steps li.is-done::after { border-left-color: var(--green); }
+.zro-steps li.is-current { color: var(--navy); font-weight: 700; }
+.zro-steps li.is-current::before { border-color: var(--amber); background: var(--amber); color: var(--white); box-shadow: 0 0 0 4px rgba(245, 166, 35, .22); }
+
+.zro-rows { display: grid; gap: 6px; margin: 14px 0 0; padding: 0; list-style: none; }
+.zro-rows li {
+  display: grid;
+  grid-template-columns: 4.8em 1fr auto 6.4em;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: .9rem;
+}
+.zro-rows li.is-active { border-color: rgba(245, 166, 35, .5); background: rgba(245, 166, 35, .07); }
+.zro-id { color: var(--navy); font-family: var(--font-head); font-weight: 700; }
+.zro-type { color: var(--muted); }
+.zro-progress { display: flex; gap: 3px; }
+.zro-progress i { width: 12px; height: 6px; border-radius: 2px; background: var(--line); }
+.zro-progress i.done { background: var(--green); }
+.zro-progress i.current { background: var(--amber); }
+.zro-state { justify-self: end; }
+.zro-state.is-done { background: rgba(47, 191, 113, .15); color: var(--green-dark); }
+.zro-state.is-todo { background: rgba(95, 120, 116, .14); color: var(--steel); }
+
+@media (max-width: 560px) {
+  .zro-card { position: static; width: auto; margin-top: 10px; box-shadow: none; border: 1px solid var(--line); }
+  .zro-rows li { grid-template-columns: 4.8em 1fr auto; }
+  .zro-type { display: none; }
+}
+
 .discipline-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

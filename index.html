@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261020-16">
+  <link rel="stylesheet" href="css/style.css?v=20261020-17">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -276,8 +276,45 @@
 
     <section id="grondzaken" class="section expertise-section bg-photo" style="--bg-img:url('https://images.unsplash.com/photo-1720155390935-f49e18525eb9?auto=format&fit=crop&w=1600&q=60')">
       <div class="expertise-layout reverse">
-        <figure class="expertise-visual">
-          <img src="images/zro-perceelrakvlakken.jpg" alt="Tracéviewer met een kabeltracé over percelen, een zakelijk-rechtoverzicht (ZRO) met richtlijnvoorstel voor vergoeding en een tabel met eigendommen" loading="lazy">
+        <figure class="expertise-visual zro-mock" aria-label="Voorbeeld: kabeltracé over percelen met per perceel de voortgang van het zakelijk recht">
+          <div class="zro-map">
+            <img src="images/zro-kaart.jpg" alt="" loading="lazy">
+            <div class="zro-card">
+              <div class="zro-card-head">
+                <strong>ZRO-032</strong>
+                <span class="zro-badge">in gesprek</span>
+              </div>
+              <p class="zro-card-meta">Dorpsweg D 100 &middot; opstalrecht</p>
+              <ol class="zro-steps">
+                <li class="is-done">Perceelinventarisatie</li>
+                <li class="is-done">Zakelijk-rechtoverzicht</li>
+                <li class="is-done">Vergoedingsvoorstel</li>
+                <li class="is-current">Gesprek eigenaar</li>
+                <li>Overeenkomst</li>
+                <li>Vestiging notaris</li>
+              </ol>
+            </div>
+          </div>
+          <ul class="zro-rows">
+            <li>
+              <span class="zro-id">ZRO-031</span>
+              <span class="zro-type">publiek &middot; gedoogplicht</span>
+              <span class="zro-progress" aria-label="6 van 6 stappen"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></span>
+              <span class="zro-state is-done">gevestigd</span>
+            </li>
+            <li class="is-active">
+              <span class="zro-id">ZRO-032</span>
+              <span class="zro-type">privaat &middot; opstalrecht</span>
+              <span class="zro-progress" aria-label="stap 4 van 6"><i class="done"></i><i class="done"></i><i class="done"></i><i class="current"></i><i></i><i></i></span>
+              <span class="zro-state">in gesprek</span>
+            </li>
+            <li>
+              <span class="zro-id">ZRO-033</span>
+              <span class="zro-type">privaat &middot; opstalrecht</span>
+              <span class="zro-progress" aria-label="stap 2 van 6"><i class="done"></i><i class="current"></i><i></i><i></i><i></i><i></i></span>
+              <span class="zro-state is-todo">overzicht</span>
+            </li>
+          </ul>
         </figure>
 
         <div class="expertise-copy">
