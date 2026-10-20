@@ -329,24 +329,49 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 
 .hero-panel {
   display: grid;
+  grid-template-columns: 76px 1fr;
   width: 100%;
   margin: 0;
   background: rgba(255, 255, 255, .05);
   border: 1px solid rgba(255, 255, 255, .14);
   border-radius: 10px;
   backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
-.hero-panel div {
+/* procestool: verticale band over alle vakgebieden heen */
+.panel-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  background: linear-gradient(180deg, rgba(47, 191, 113, .2), rgba(47, 191, 113, .08));
+  border-right: 2px solid var(--green);
+}
+
+.panel-tool-text {
+  display: flex;
+  gap: 6px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.hero-panel .panel-tool strong { letter-spacing: .04em; }
+.hero-panel .panel-tool em { color: rgba(255, 255, 255, .7); }
+
+.panel-list { display: grid; }
+
+.panel-list > div {
   display: grid;
   grid-template-columns: 44px 1fr;
   align-items: center;
   gap: 16px;
-  padding: 15px 22px;
+  padding: 18px 22px;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
-.hero-panel div:last-child { border-bottom: 0; }
+.panel-list > div:last-child { border-bottom: 0; }
 
 .panel-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px; }
 .panel-icon svg { width: 22px; height: 22px; }
@@ -1102,9 +1127,6 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 
 /* ---------- Veiligheid ---------- */
 .panel-icon-red { color: #ff8a70; background: rgba(255, 138, 112, .17); }
-.hero-safety { display: flex; align-items: flex-start; gap: 12px; max-width: 640px; margin: 0 0 26px; padding: 14px 16px; border-left: 3px solid var(--amber); border-radius: 0 var(--radius) var(--radius) 0; background: rgba(5, 35, 38, .55); color: rgba(255, 255, 255, .92); font-size: .98rem; line-height: 1.5; backdrop-filter: blur(4px); }
-.hero-safety svg { flex: none; width: 26px; height: 26px; margin-top: 1px; color: var(--amber); }
-.hero-safety strong { color: #fff; }
 
 .safety-section { background: var(--navy-deep); color: rgba(255, 255, 255, .86); }
 .safety-section h2, .safety-section h3 { color: #fff; }
@@ -1139,8 +1161,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .vacancies .band-media img { opacity: .6; }
 
 .hero-panel { background: rgba(4, 28, 30, .8); border-color: rgba(255, 255, 255, .16); }
-.hero-panel div { color: rgba(255, 255, 255, .9); }
-.hero-safety { background: rgba(4, 28, 30, .8); }
+.panel-list > div { color: rgba(255, 255, 255, .9); }
 
 .process-list,
 .ai-copy,

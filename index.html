@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261019-5">
+  <link rel="stylesheet" href="css/style.css?v=20261020-1">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -138,7 +138,6 @@
         <p class="hero-intro">
           Van de eerste projectschets tot een definitief ontwerp dat klaar is voor de aannemer. Met onze eigen procestool ontwerpen we kabels en leidingen voor energie, gas, warmte, water en telecom sneller, zonder in te leveren op vakmanschap.
         </p>
-        <p class="hero-safety"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><strong>Veiligheid staat voorop.</strong> Elk ontwerp toetsen we op KLIC, afstanden en normen. Een engineer tekent altijd af.</span></p>
         <div class="hero-actions">
           <a class="button primary" href="#contact">Bespreek je project</a>
           <a class="button secondary" href="#diensten">Bekijk diensten</a>
@@ -146,59 +145,52 @@
       </div>
 
       <aside class="hero-panel" aria-label="Vakgebieden">
-        <div>
-          <span class="panel-icon panel-icon-red" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          </span>
-          <span class="panel-text">
-            <strong>Veiligheid</strong>
-            <em>veilig ontwerpen: KLIC, afstanden en normen</em>
-          </span>
-        </div>
-        <div>
-          <span class="panel-icon panel-icon-amber" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
-          </span>
-          <span class="panel-text">
-            <strong>Elektriciteit</strong>
-            <em>MS/LS-kabels, netverzwaring en laadinfra</em>
-          </span>
-        </div>
-        <div>
-          <span class="panel-icon panel-icon-orange" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c3 4-3 5.5-3 9.5a3 3 0 0 0 6 0c0-1.4-.7-2.3-1.4-2.8.6 1.8-.3 2.8-1.3 2.8a1.7 1.7 0 0 1-1.7-1.7c0-2.3 2.2-3 1.4-5.3 1.6 1 4 4 4 7a5.5 5.5 0 1 1-11 0C5 8 9 5 12 2z"/></svg>
-          </span>
-          <span class="panel-text">
-            <strong>Gas &amp; warmte</strong>
-            <em>gasleidingen, verleggingen en warmtenetten</em>
-          </span>
-        </div>
-        <div>
-          <span class="panel-icon panel-icon-teal" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c4 5 7 9.2 7 12.8a7 7 0 1 1-14 0C5 11.2 8 7 12 2z"/></svg>
-          </span>
-          <span class="panel-text">
-            <strong>Water &amp; riolering</strong>
-            <em>drinkwater, transportleidingen en klimaatadaptatie</em>
-          </span>
-        </div>
-        <div>
-          <span class="panel-icon panel-icon-blue" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M6 13.5a6.5 6.5 0 0 1 6.5 6.5"/><path d="M6 8.5a11.5 11.5 0 0 1 11.5 11.5"/></svg>
-          </span>
-          <span class="panel-text">
-            <strong>Telecom &amp; data</strong>
-            <em>glasvezel en coördinatie met nutsvoorzieningen</em>
-          </span>
-        </div>
-        <div>
+        <div class="panel-tool">
           <span class="panel-icon panel-icon-green" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.5 5.5l2 2M18.5 5.5l-2 2M5.5 18.5l2-2M18.5 18.5l-2-2"/></svg>
           </span>
-          <span class="panel-text">
+          <span class="panel-tool-text">
             <strong>Procestool</strong>
-            <em>onze eigen tool voor sneller en beter ontwerp</em>
+            <em>onze eigen tool, voor elk vakgebied</em>
           </span>
+        </div>
+        <div class="panel-list">
+          <div>
+            <span class="panel-icon panel-icon-amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-14h-7z"/></svg>
+            </span>
+            <span class="panel-text">
+              <strong>Elektriciteit</strong>
+              <em>MS/LS-kabels, netverzwaring en laadinfra</em>
+            </span>
+          </div>
+          <div>
+            <span class="panel-icon panel-icon-orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c3 4-3 5.5-3 9.5a3 3 0 0 0 6 0c0-1.4-.7-2.3-1.4-2.8.6 1.8-.3 2.8-1.3 2.8a1.7 1.7 0 0 1-1.7-1.7c0-2.3 2.2-3 1.4-5.3 1.6 1 4 4 4 7a5.5 5.5 0 1 1-11 0C5 8 9 5 12 2z"/></svg>
+            </span>
+            <span class="panel-text">
+              <strong>Gas &amp; warmte</strong>
+              <em>gasleidingen, verleggingen en warmtenetten</em>
+            </span>
+          </div>
+          <div>
+            <span class="panel-icon panel-icon-teal" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c4 5 7 9.2 7 12.8a7 7 0 1 1-14 0C5 11.2 8 7 12 2z"/></svg>
+            </span>
+            <span class="panel-text">
+              <strong>Water &amp; riolering</strong>
+              <em>drinkwater, transportleidingen en klimaatadaptatie</em>
+            </span>
+          </div>
+          <div>
+            <span class="panel-icon panel-icon-blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="1.6" fill="currentColor" stroke="none"/><path d="M6 13.5a6.5 6.5 0 0 1 6.5 6.5"/><path d="M6 8.5a11.5 11.5 0 0 1 11.5 11.5"/></svg>
+            </span>
+            <span class="panel-text">
+              <strong>Telecom &amp; data</strong>
+              <em>glasvezel en coördinatie met nutsvoorzieningen</em>
+            </span>
+          </div>
         </div>
       </aside>
     </section>
