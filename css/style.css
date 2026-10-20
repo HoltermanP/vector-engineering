@@ -510,12 +510,33 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 
 /* ZRO-voorbeeld: kaart met statusstappen per perceel, zonder bedragen */
 .zro-map { position: relative; border-radius: 6px; overflow: hidden; }
-.zro-map img { aspect-ratio: 913 / 695; object-fit: cover; }
+.zro-map img { aspect-ratio: 1600 / 1218; object-fit: cover; }
+
+/* tracé in de berm langs de kavelweg, gestuurde boring onder de vaart */
+.zro-trace { position: absolute; inset: 0; width: 100%; height: 100%; }
+.zro-trace * { vector-effect: non-scaling-stroke; }
+.zro-parcel { fill: rgba(245, 166, 35, .22); stroke: var(--amber); stroke-width: 2; stroke-dasharray: 6 4; }
+.zro-route-casing { fill: none; stroke: rgba(255, 255, 255, .85); stroke-width: 7; stroke-linejoin: round; stroke-linecap: round; }
+.zro-route { fill: none; stroke: #e0362c; stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; }
+.zro-hdd { stroke: #e0362c; stroke-width: 3; stroke-dasharray: 5 4; }
+.zro-node { fill: var(--white); stroke: #e0362c; stroke-width: 2.5; }
+.zro-label {
+  position: absolute;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(5, 35, 38, .78);
+  color: var(--white);
+  font-size: .72rem;
+  white-space: nowrap;
+  transform: translate(-100%, -50%);
+  pointer-events: none;
+}
+.zro-credit { margin-top: 10px; color: var(--steel); font-size: .72rem; }
 
 .zro-card {
   position: absolute;
   top: 14px;
-  right: 14px;
+  left: 14px;
   width: min(250px, 50%);
   padding: 16px 18px;
   background: rgba(255, 255, 255, .96);
@@ -598,6 +619,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 
 @media (max-width: 560px) {
   .zro-card { position: static; width: auto; margin-top: 10px; box-shadow: none; border: 1px solid var(--line); }
+  .zro-label { display: none; }
   .zro-rows li { grid-template-columns: 4.8em 1fr auto; }
   .zro-type { display: none; }
 }
