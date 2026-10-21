@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261021-1">
+  <link rel="stylesheet" href="css/style.css?v=20261021-2">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -264,9 +264,67 @@
           </ul>
         </article>
 
-        <article class="service-card">
-          <h3>Data en kwaliteitsborging</h3>
-          <p>Gestructureerde projectinformatie, zodat tracékeuzes, diepteliggingen, raakvlakken en revisies traceerbaar en controleerbaar blijven.</p>
+        <article class="service-card featured data-card">
+          <div class="data-copy">
+            <h3>Slim met data, verbanden in beeld</h3>
+            <p class="data-lead">Een tracéontwerp hangt aan elkaar van afhankelijkheden. Wij maken die zichtbaar en richten het ontwerpproces daarop in.</p>
+            <dl class="data-points">
+              <div>
+                <dt>Data slim inzetten</dt>
+                <dd>Kadaster, KLIC, onderzoeken en ontwerp in één samenhangende dataset in plaats van losse bestanden.</dd>
+              </div>
+              <div>
+                <dt>Verbanden en afhankelijkheden zichtbaar</dt>
+                <dd>Direct zien welk perceel, onderzoek of vergunning een ontwerpkeuze raakt, en wat er verschuift als iets verandert.</dd>
+              </div>
+              <div>
+                <dt>Een efficiënt ingericht ontwerpproces</dt>
+                <dd>Werk in de juiste volgorde en parallel waar het kan, zodat niemand op een ander wacht.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <svg class="data-graph" viewBox="0 0 520 360" role="img" aria-label="Schema: kadaster, KLIC, onderzoeken en eisen voeden het tracéontwerp, dat doorwerkt in ZRO's, vergunningen, planning en het definitief ontwerp">
+            <g class="dg-links">
+              <path d="M120 52 C 190 52, 200 180, 260 180"/>
+              <path d="M120 132 C 190 132, 200 180, 260 180"/>
+              <path d="M120 228 C 190 228, 200 180, 260 180"/>
+              <path d="M120 308 C 190 308, 200 180, 260 180"/>
+              <path d="M260 180 C 320 180, 330 52, 400 52"/>
+              <path d="M260 180 C 320 180, 330 132, 400 132"/>
+              <path d="M260 180 C 320 180, 330 228, 400 228"/>
+              <path class="dg-dep" d="M460 72 L 460 112"/>
+              <path class="dg-dep" d="M460 152 L 460 208"/>
+              <path class="dg-dep" d="M460 248 L 460 288"/>
+            </g>
+            <g class="dg-flow">
+              <path d="M120 52 C 190 52, 200 180, 260 180"/>
+              <path d="M120 132 C 190 132, 200 180, 260 180"/>
+              <path d="M120 228 C 190 228, 200 180, 260 180"/>
+              <path d="M120 308 C 190 308, 200 180, 260 180"/>
+              <path d="M260 180 C 320 180, 330 52, 400 52"/>
+              <path d="M260 180 C 320 180, 330 132, 400 132"/>
+              <path d="M260 180 C 320 180, 330 228, 400 228"/>
+            </g>
+            <g class="dg-node dg-in">
+              <rect x="10" y="32" width="110" height="40" rx="8"/><text x="65" y="57">Kadaster</text>
+              <rect x="10" y="112" width="110" height="40" rx="8"/><text x="65" y="137">KLIC</text>
+              <rect x="10" y="208" width="110" height="40" rx="8"/><text x="65" y="233">Onderzoeken</text>
+              <rect x="10" y="288" width="110" height="40" rx="8"/><text x="65" y="313">Eisen</text>
+            </g>
+            <g class="dg-node dg-core">
+              <circle cx="260" cy="180" r="54"/>
+              <text x="260" y="175">Tracé-</text><text x="260" y="194">ontwerp</text>
+            </g>
+            <g class="dg-node dg-out">
+              <rect x="400" y="32" width="110" height="40" rx="8"/><text x="455" y="57">ZRO's</text>
+              <rect x="400" y="112" width="110" height="40" rx="8"/><text x="455" y="137">Vergunningen</text>
+              <rect x="400" y="208" width="110" height="40" rx="8"/><text x="455" y="233">Planning</text>
+            </g>
+            <g class="dg-node dg-final">
+              <rect x="400" y="288" width="110" height="40" rx="8"/><text x="455" y="313">DO</text>
+            </g>
+          </svg>
         </article>
       </div>
     </section>
