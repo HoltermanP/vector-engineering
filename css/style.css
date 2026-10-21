@@ -705,18 +705,6 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .service-card p { color: var(--muted); }
 .service-card.featured p { color: rgba(255, 255, 255, .78); }
 
-.card-number {
-  display: inline-block;
-  margin-bottom: 28px;
-  color: var(--amber);
-  font-family: var(--font-mono);
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-}
-
-.service-card:not(.featured) .card-number { color: var(--green-dark); }
-
 .service-card ul { display: grid; gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
 
 .service-card li {
@@ -879,20 +867,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .gain-grid-2 .gain-card h3 { font-size: 1.25rem; }
 .gain-card { padding-top: 6px; border-top: 2px solid var(--navy); }
 
-.gain-num {
-  display: block;
-  margin: 16px 0 12px;
-  font-family: var(--font-head);
-  font-size: 2.3rem;
-  font-weight: 700;
-  line-height: 1;
-  background: var(--gradient-vector);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.gain-card h3 { font-size: 1.08rem; }
+.gain-card h3 { margin-top: 18px; font-size: 1.08rem; }
 .gain-total { margin: 30px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-size: .9rem; line-height: 1.6; color: var(--muted); }
 .assure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 56px; }
 .assure-card { padding: 30px 32px; background: var(--paper, #f6f8f9); border: 1px solid var(--line); border-top: 3px solid var(--amber); border-radius: 10px; }
@@ -1384,10 +1359,11 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 /* ---------- Conditionerende onderzoeken ---------- */
 .studies-section { background: var(--paper); }
 .studies-section .section-heading p { max-width: 720px; color: var(--muted); font-size: 1.05rem; }
-.study-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0 auto; padding: 0; list-style: none; counter-reset: study; }
-.study-card { position: relative; padding: 24px 22px; background: var(--white); border-radius: 10px; border-top: 4px solid var(--teal); counter-increment: study; }
-.study-card::before { content: counter(study, decimal-leading-zero); display: block; margin-bottom: 14px; font: 700 .8rem var(--font-mono); color: var(--teal-dark); }
+.study-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0 auto; padding: 0; list-style: none; }
+.study-card { position: relative; padding: 24px 22px; background: var(--white); border-radius: 10px; border-top: 4px solid var(--teal); }
 .study-card h3 { margin-bottom: 8px; font-size: 1.08rem; }
+.study-card-lead { grid-column: 1 / -1; background: linear-gradient(100deg, rgba(11, 188, 174, .12), var(--white) 60%); }
+.study-card-lead p { max-width: 760px; }
 .study-card p { margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.55; }
 @media (max-width: 1020px) { .study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) { .study-grid { grid-template-columns: 1fr; } }
