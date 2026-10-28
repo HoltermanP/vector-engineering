@@ -96,3 +96,5 @@ if (gantts.length && 'IntersectionObserver' in window && !window.matchMedia('(pr
     observer.observe(gantt);
   });
 }
+
+document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
