@@ -32,19 +32,29 @@ export default async function handler(req, res) {
     return res.status(422).json({ success: false, message: errors.join(' ') });
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_TO } = process.env;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_FROM, MAIL_TO } = process.env;
+
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASSWORD) {
+    console.error('SMTP niet geconfigureerd: zet SMTP_HOST, SMTP_USER en SMTP_PASSWORD in Vercel.');
+    return res.status(500).json({
+      success: false,
+      message: 'Het verzenden is mislukt. Probeer het later opnieuw of mail ons direct.',
+    });
+  }
+
+  const port = Number(SMTP_PORT || 465);
 
   try {
     const transporter = nodemailer.createTransport({
-      host: SMTP_HOST || 'smtp.strato.de',
-      port: Number(SMTP_PORT || 465),
-      secure: Number(SMTP_PORT || 465) === 465,
+      host: SMTP_HOST,
+      port,
+      secure: port === 465,
       auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
     });
 
     await transporter.sendMail({
-      from: { name: 'VECTOR Engineering website', address: SMTP_USER },
-      to: MAIL_TO || SMTP_USER,
+      from: { name: 'VECTOR Engineering website', address: MAIL_FROM || SMTP_USER },
+      to: MAIL_TO || 'info@vector-engineering.nl',
       replyTo: { name, address: email },
       subject: `Contactformulier VECTOR Engineering: ${company || name}`,
       text: `Naam: ${name}\nBedrijf: ${company || '-'}\nE-mail: ${email}\nTelefoon: ${phone || '-'}\n\nBericht:\n${message}\n`,

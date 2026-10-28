@@ -5,3 +5,4 @@ node_modules/
 .env.*
 _php-oud/
 .DS_Store
+!.env.example
