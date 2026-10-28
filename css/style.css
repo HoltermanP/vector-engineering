@@ -1416,6 +1416,7 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .track-card + .track-card { border-top-color: var(--teal); }
 .track-title { margin-bottom: 0; font-size: 1.12rem; color: var(--navy); }
 .track-card .step-list { margin-top: 18px; }
+.track-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; line-height: 1.6; }
 @media (max-width: 900px) { .track-grid { grid-template-columns: 1fr; } .track-card { padding: 24px 22px; } }
 
 /* ---------- Conditionerende onderzoeken ---------- */
