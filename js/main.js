@@ -126,6 +126,8 @@ if (studyMap) {
     hydro: ['Hydrologie volgt in het DO, omdat het metingen in het veld vraagt.', 'Peilbuizen geven de grondwaterstand. Daarmee bepalen we de bemaling bij de boorputten en de sleuf.'],
     stikstof: ['Eerste AERIUS-toets: het werkterrein bij het schakelstation ligt dicht bij Natura 2000.', 'Depositieberekening voor de aanleg, op basis van materieel en planning uit het DO.'],
   };
+  const BADGE = { so: 'SO · zoekgebied', vo: 'VO · voorkeurstracé', do: 'DO · definitief tracé' };
+  const badge = studyMap.querySelector('[data-map-badge]');
   const NAMES = { bodem: 'Bodem & Milieu', ooo: 'OOO', flora: 'Flora & Fauna', archeo: 'Archeologie', hydro: 'Hydrologie', stikstof: 'Stikstof & Natura 2000' };
 
   const state = { phase: 'do', shown: new Set(LAYERS), active: null, pinned: null };
@@ -151,6 +153,7 @@ if (studyMap) {
       card.querySelectorAll('.phase-bar .ph').forEach((cell, i) => cell.classList.toggle('is-now', i === phaseIndex));
     });
     phaseBtns.forEach((btn) => btn.setAttribute('aria-pressed', String(btn.dataset.phaseBtn === phase)));
+    if (badge) badge.textContent = BADGE[phase];
     if (caption) {
       const label = phase.toUpperCase();
       caption.innerHTML = active
@@ -185,6 +188,31 @@ if (studyMap) {
   }
 
   studyMap.classList.add('is-js');
+
+  // Labels van lagen als gekleurde pills tekenen
+  const makePills = () => {
+    const ns = 'http://www.w3.org/2000/svg';
+    studyMap.querySelectorAll('.sm-layer .sm-label, .sm-trace .sm-label, .sm-corridor .sm-label').forEach((text) => {
+      if (text.previousElementSibling?.classList.contains('sm-pill')) return;
+      text.classList.add('sm-pill-text');
+      const box = text.getBBox();
+      if (!box.width) return;
+      const pill = document.createElementNS(ns, 'rect');
+      const h = box.height + 5;
+      pill.setAttribute('x', box.x - 6);
+      pill.setAttribute('y', box.y + box.height / 2 - h / 2);
+      pill.setAttribute('width', box.width + 12);
+      pill.setAttribute('height', h);
+      pill.setAttribute('rx', h / 2);
+      pill.classList.add('sm-pill');
+      text.before(pill);
+    });
+  };
+  (document.fonts?.ready || Promise.resolve()).then(makePills);
+  window.matchMedia('(max-width: 760px)').addEventListener('change', () => {
+    studyMap.querySelectorAll('.sm-pill').forEach((pill) => pill.remove());
+    makePills();
+  });
   if (controls) controls.hidden = false;
 
   phaseBtns.forEach((btn) => btn.addEventListener('click', () => {

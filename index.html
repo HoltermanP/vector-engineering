@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261106-4">
+  <link rel="stylesheet" href="css/style.css?v=20261106-5">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -458,133 +458,171 @@
             </div>
           </div>
           <figure class="study-map" data-study-map data-phase="do">
+            <span class="map-badge" data-map-badge>DO · definitief tracé</span>
             <svg viewBox="0 0 640 400" role="img" aria-label="Voorbeeldtracé tussen onderstation en schakelstation met de datalagen uit de onderzoeken">
               <defs>
-                <pattern id="sm-ditch" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(12)"><line x1="0" y1="0" x2="0" y2="24" stroke="#c9dccb" stroke-width="1.4"/></pattern>
-                <pattern id="sm-trees" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3" fill="#b9d3ad"/><circle cx="11" cy="10" r="2.6" fill="#b2cea6"/></pattern>
-                <pattern id="sm-hatch-bodem" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#a86408" stroke-width="2"/></pattern>
-                <pattern id="sm-hatch-ooo" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#d1495b" stroke-width="1.6"/></pattern>
+                <linearGradient id="sm-water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a7d8ea"/><stop offset="1" stop-color="#6db4d2"/></linearGradient>
+                <pattern id="sm-forest" width="26" height="26" patternUnits="userSpaceOnUse">
+                  <rect width="26" height="26" fill="#9cc48a"/>
+                  <circle cx="6" cy="7" r="6" fill="#86b475"/><circle cx="19" cy="5" r="5" fill="#7aab6a"/><circle cx="14" cy="17" r="7" fill="#8dbb7c"/><circle cx="3" cy="22" r="4.5" fill="#78a867"/><circle cx="24" cy="21" r="4" fill="#82b171"/>
+                </pattern>
+                <radialGradient id="sm-g-archeo"><stop offset="0" stop-color="#c47a42" stop-opacity=".62"/><stop offset="1" stop-color="#c47a42" stop-opacity=".22"/></radialGradient>
+                <radialGradient id="sm-g-ooo"><stop offset="0" stop-color="#e5484d" stop-opacity=".5"/><stop offset="1" stop-color="#e5484d" stop-opacity=".14"/></radialGradient>
+                <linearGradient id="sm-g-bodem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5a623" stop-opacity=".75"/><stop offset="1" stop-color="#e07b28" stop-opacity=".55"/></linearGradient>
+                <radialGradient id="sm-g-n2k"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".55"/><stop offset=".55" stop-color="#8b5cf6" stop-opacity=".28"/><stop offset="1" stop-color="#8b5cf6" stop-opacity=".06"/></radialGradient>
+                <radialGradient id="sm-g-pit"><stop offset="0" stop-color="#3b8fd6" stop-opacity=".55"/><stop offset="1" stop-color="#3b8fd6" stop-opacity=".1"/></radialGradient>
+                <linearGradient id="sm-g-corr" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0bbcae"/><stop offset="1" stop-color="#7ccf4a"/></linearGradient>
+                <pattern id="sm-hatch-bodem" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#b45309" stroke-width="1.6" stroke-opacity=".7"/></pattern>
+                <pattern id="sm-hatch-ooo" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#c42b3a" stroke-width="1.3" stroke-opacity=".55"/></pattern>
+                <filter id="sm-shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#052326" flood-opacity=".35"/></filter>
+                <filter id="sm-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
                 <clipPath id="sm-n2000-clip"><path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z"/></clipPath>
               </defs>
 
-              <!-- ondergrond -->
+              <!-- ondergrond: topografie -->
               <g class="sm-base">
-                <rect width="640" height="400" fill="#e8f0e2"/>
-                <g transform="rotate(12 320 200)" opacity=".9">
-                  <rect x="-60" y="-80" width="96" height="560" fill="#e1ebd8"/>
-                  <rect x="132" y="-80" width="72" height="560" fill="#edf3e7"/>
-                  <rect x="300" y="-80" width="120" height="560" fill="#e1ebd8"/>
-                  <rect x="516" y="-80" width="72" height="560" fill="#edf3e7"/>
+                <g transform="rotate(12 320 200)">
+                  <rect x="-220" y="-160" width="26" height="720" fill="#d2e2b6"/><rect x="-194" y="-160" width="30" height="720" fill="#cfe0ae"/><rect x="-164" y="-160" width="20" height="720" fill="#dce8c4"/><rect x="-144" y="-160" width="34" height="720" fill="#dce8c4"/><rect x="-110" y="-160" width="26" height="720" fill="#e3d8b0"/><rect x="-84" y="-160" width="20" height="720" fill="#e3d8b0"/><rect x="-64" y="-160" width="24" height="720" fill="#dce8c4"/><rect x="-40" y="-160" width="20" height="720" fill="#ebe2c2"/><rect x="-20" y="-160" width="30" height="720" fill="#dce8c4"/><rect x="10" y="-160" width="24" height="720" fill="#dce8c4"/><rect x="34" y="-160" width="34" height="720" fill="#ebe2c2"/><rect x="68" y="-160" width="20" height="720" fill="#d9e6bf"/><rect x="88" y="-160" width="34" height="720" fill="#dce8c4"/><rect x="122" y="-160" width="24" height="720" fill="#cfe0ae"/><rect x="146" y="-160" width="38" height="720" fill="#e3d8b0"/><rect x="184" y="-160" width="20" height="720" fill="#e3d8b0"/><rect x="204" y="-160" width="34" height="720" fill="#ebe2c2"/><rect x="238" y="-160" width="20" height="720" fill="#d2e2b6"/><rect x="258" y="-160" width="20" height="720" fill="#e3d8b0"/><rect x="278" y="-160" width="24" height="720" fill="#e4ecd0"/><rect x="302" y="-160" width="30" height="720" fill="#d2e2b6"/><rect x="332" y="-160" width="34" height="720" fill="#dce8c4"/><rect x="366" y="-160" width="34" height="720" fill="#e4ecd0"/><rect x="400" y="-160" width="34" height="720" fill="#d9e6bf"/><rect x="434" y="-160" width="38" height="720" fill="#d2e2b6"/><rect x="472" y="-160" width="20" height="720" fill="#e3d8b0"/><rect x="492" y="-160" width="34" height="720" fill="#cfe0ae"/><rect x="526" y="-160" width="24" height="720" fill="#e4ecd0"/><rect x="550" y="-160" width="20" height="720" fill="#e3d8b0"/><rect x="570" y="-160" width="38" height="720" fill="#dce8c4"/><rect x="608" y="-160" width="34" height="720" fill="#dce8c4"/><rect x="642" y="-160" width="34" height="720" fill="#d2e2b6"/><rect x="676" y="-160" width="30" height="720" fill="#cfe0ae"/><rect x="706" y="-160" width="34" height="720" fill="#ebe2c2"/><rect x="740" y="-160" width="26" height="720" fill="#ebe2c2"/><rect x="766" y="-160" width="34" height="720" fill="#ebe2c2"/><rect x="800" y="-160" width="26" height="720" fill="#e4ecd0"/><rect x="826" y="-160" width="24" height="720" fill="#d9e6bf"/><rect x="850" y="-160" width="24" height="720" fill="#cfe0ae"/><rect x="874" y="-160" width="24" height="720" fill="#dce8c4"/>
+                  <g stroke="#f7f8ee" stroke-width="2.2"><line x1="-220" y1="-160" x2="-220" y2="560"/><line x1="-194" y1="-160" x2="-194" y2="560"/><line x1="-164" y1="-160" x2="-164" y2="560"/><line x1="-144" y1="-160" x2="-144" y2="560"/><line x1="-110" y1="-160" x2="-110" y2="560"/><line x1="-84" y1="-160" x2="-84" y2="560"/><line x1="-64" y1="-160" x2="-64" y2="560"/><line x1="-40" y1="-160" x2="-40" y2="560"/><line x1="-20" y1="-160" x2="-20" y2="560"/><line x1="10" y1="-160" x2="10" y2="560"/><line x1="34" y1="-160" x2="34" y2="560"/><line x1="68" y1="-160" x2="68" y2="560"/><line x1="88" y1="-160" x2="88" y2="560"/><line x1="122" y1="-160" x2="122" y2="560"/><line x1="146" y1="-160" x2="146" y2="560"/><line x1="184" y1="-160" x2="184" y2="560"/><line x1="204" y1="-160" x2="204" y2="560"/><line x1="238" y1="-160" x2="238" y2="560"/><line x1="258" y1="-160" x2="258" y2="560"/><line x1="278" y1="-160" x2="278" y2="560"/><line x1="302" y1="-160" x2="302" y2="560"/><line x1="332" y1="-160" x2="332" y2="560"/><line x1="366" y1="-160" x2="366" y2="560"/><line x1="400" y1="-160" x2="400" y2="560"/><line x1="434" y1="-160" x2="434" y2="560"/><line x1="472" y1="-160" x2="472" y2="560"/><line x1="492" y1="-160" x2="492" y2="560"/><line x1="526" y1="-160" x2="526" y2="560"/><line x1="550" y1="-160" x2="550" y2="560"/><line x1="570" y1="-160" x2="570" y2="560"/><line x1="608" y1="-160" x2="608" y2="560"/><line x1="642" y1="-160" x2="642" y2="560"/><line x1="676" y1="-160" x2="676" y2="560"/><line x1="706" y1="-160" x2="706" y2="560"/><line x1="740" y1="-160" x2="740" y2="560"/><line x1="766" y1="-160" x2="766" y2="560"/><line x1="800" y1="-160" x2="800" y2="560"/><line x1="826" y1="-160" x2="826" y2="560"/><line x1="850" y1="-160" x2="850" y2="560"/><line x1="874" y1="-160" x2="874" y2="560"/></g>
+                  <g stroke="#9ccde0" stroke-width="1"><line x1="-220" y1="-160" x2="-220" y2="560"/><line x1="-194" y1="-160" x2="-194" y2="560"/><line x1="-164" y1="-160" x2="-164" y2="560"/><line x1="-144" y1="-160" x2="-144" y2="560"/><line x1="-110" y1="-160" x2="-110" y2="560"/><line x1="-84" y1="-160" x2="-84" y2="560"/><line x1="-64" y1="-160" x2="-64" y2="560"/><line x1="-40" y1="-160" x2="-40" y2="560"/><line x1="-20" y1="-160" x2="-20" y2="560"/><line x1="10" y1="-160" x2="10" y2="560"/><line x1="34" y1="-160" x2="34" y2="560"/><line x1="68" y1="-160" x2="68" y2="560"/><line x1="88" y1="-160" x2="88" y2="560"/><line x1="122" y1="-160" x2="122" y2="560"/><line x1="146" y1="-160" x2="146" y2="560"/><line x1="184" y1="-160" x2="184" y2="560"/><line x1="204" y1="-160" x2="204" y2="560"/><line x1="238" y1="-160" x2="238" y2="560"/><line x1="258" y1="-160" x2="258" y2="560"/><line x1="278" y1="-160" x2="278" y2="560"/><line x1="302" y1="-160" x2="302" y2="560"/><line x1="332" y1="-160" x2="332" y2="560"/><line x1="366" y1="-160" x2="366" y2="560"/><line x1="400" y1="-160" x2="400" y2="560"/><line x1="434" y1="-160" x2="434" y2="560"/><line x1="472" y1="-160" x2="472" y2="560"/><line x1="492" y1="-160" x2="492" y2="560"/><line x1="526" y1="-160" x2="526" y2="560"/><line x1="550" y1="-160" x2="550" y2="560"/><line x1="570" y1="-160" x2="570" y2="560"/><line x1="608" y1="-160" x2="608" y2="560"/><line x1="642" y1="-160" x2="642" y2="560"/><line x1="676" y1="-160" x2="676" y2="560"/><line x1="706" y1="-160" x2="706" y2="560"/><line x1="740" y1="-160" x2="740" y2="560"/><line x1="766" y1="-160" x2="766" y2="560"/><line x1="800" y1="-160" x2="800" y2="560"/><line x1="826" y1="-160" x2="826" y2="560"/><line x1="850" y1="-160" x2="850" y2="560"/><line x1="874" y1="-160" x2="874" y2="560"/><line x1="-220" y1="40" x2="880" y2="40"/><line x1="-220" y1="250" x2="880" y2="250"/><line x1="-220" y1="470" x2="880" y2="470"/></g>
                 </g>
-                <rect width="640" height="400" fill="url(#sm-ditch)"/>
-                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="#d3e5c8"/>
-                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="url(#sm-trees)"/>
-                <text class="sm-label" x="560" y="40">Natura 2000</text>
-                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="#b7d6e3" stroke-width="16"/>
-                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="#a5cbdb" stroke-width="1"/>
-                <text class="sm-label" x="214" y="60" transform="rotate(72 214 60)">vaart</text>
-                <path d="M-10 318 C 180 300, 380 250, 650 200" fill="none" stroke="#c4cbc6" stroke-width="9"/>
-                <path d="M-10 318 C 180 300, 380 250, 650 200" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="6 6"/>
-                <text class="sm-label" x="318" y="256" transform="rotate(-11 318 256)">provinciale weg</text>
-                <g fill="#cdd3cf">
-                  <rect x="330" y="182" width="12" height="9"/><rect x="348" y="176" width="10" height="12"/><rect x="364" y="186" width="14" height="9"/>
-                  <rect x="384" y="170" width="11" height="11"/><rect x="398" y="190" width="13" height="9"/><rect x="342" y="200" width="12" height="10"/>
-                  <rect x="362" y="206" width="10" height="9"/><rect x="380" y="200" width="12" height="11"/><rect x="414" y="176" width="10" height="10"/>
-                  <rect x="420" y="198" width="12" height="9"/><rect x="398" y="214" width="11" height="9"/><rect x="352" y="160" width="12" height="9"/>
-                  <rect x="372" y="152" width="9" height="16" fill="#bcc4bf"/>
+                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="url(#sm-forest)" stroke="#6f9d5f" stroke-width="1.2"/>
+                <text class="sm-label sm-label-base" x="572" y="34">Natura 2000</text>
+                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="#86bccf" stroke-width="20"/>
+                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="url(#sm-water)" stroke-width="16"/>
+                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1" stroke-dasharray="10 14"/>
+                <text class="sm-label sm-label-base sm-label-water" x="214" y="62" transform="rotate(72 214 62)">vaart</text>
+                <g fill="none" stroke="#e6e2d8" stroke-width="3">
+                  <path d="M372 258 C 376 220 378 190 382 140"/><path d="M322 204 C 360 196 400 192 446 186"/><path d="M182 302 L 176 270"/>
                 </g>
-                <text class="sm-label" x="414" y="140">dorpskern</text>
+                <path d="M-10 318 C 180 300, 380 250, 650 200" fill="none" stroke="#c99a3f" stroke-width="11"/>
+                <path d="M-10 318 C 180 300, 380 250, 650 200" fill="none" stroke="#f6d77c" stroke-width="8"/>
+                <text class="sm-label sm-label-base" x="318" y="252" transform="rotate(-11 318 252)">provinciale weg</text>
+                <g fill="#d6957f" stroke="#ad6e5a" stroke-width=".8">
+                  <rect x="330" y="182" width="12" height="9"/><rect x="348" y="176" width="10" height="12"/><rect x="386" y="184" width="14" height="9"/>
+                  <rect x="388" y="164" width="11" height="11"/><rect x="404" y="196" width="13" height="9"/><rect x="342" y="208" width="12" height="10"/>
+                  <rect x="384" y="206" width="10" height="9"/><rect x="398" y="214" width="12" height="11"/><rect x="420" y="172" width="10" height="10"/>
+                  <rect x="426" y="198" width="12" height="9"/><rect x="352" y="224" width="11" height="9"/><rect x="352" y="156" width="12" height="9"/>
+                  <rect x="336" y="166" width="9" height="9"/><rect x="410" y="152" width="12" height="9"/><rect x="430" y="214" width="9" height="10"/>
+                  <rect x="168" y="270" width="14" height="10"/><rect x="186" y="266" width="9" height="12"/>
+                  <rect x="612" y="244" width="13" height="10"/><rect x="600" y="258" width="9" height="9"/>
+                </g>
+                <rect x="360" y="190" width="10" height="20" fill="#b97f6c" stroke="#8f5a48" stroke-width=".8"/>
+                <g fill="#7fb06c" opacity=".9">
+                  <circle cx="326" cy="222" r="6"/><circle cx="446" cy="160" r="7"/><circle cx="452" cy="174" r="5"/><circle cx="320" cy="150" r="5"/>
+                  <circle cx="162" cy="264" r="6"/><circle cx="200" cy="262" r="5"/><circle cx="196" cy="276" r="4"/><circle cx="628" cy="236" r="6"/><circle cx="596" cy="248" r="5"/>
+                </g>
+                <text class="sm-label sm-label-base" x="420" y="136">dorpskern</text>
+                <g class="sm-north" transform="translate(616 362)"><path d="M0 -12 L6 6 L0 2 L-6 6Z" fill="#0a3b3f"/><text x="0" y="18" class="sm-north-t">N</text></g>
+                <g class="sm-scale" transform="translate(504 384)"><rect x="0" y="0" width="40" height="4" fill="#0a3b3f"/><rect x="40" y="0" width="40" height="4" fill="#fff" stroke="#0a3b3f" stroke-width=".8"/><text x="0" y="-4" class="sm-scale-t">0</text><text x="80" y="-4" class="sm-scale-t">500 m</text></g>
               </g>
-
               <!-- SO: zoekgebied -->
-              <path class="sm-corridor" d="M48 352 C 160 340, 260 330, 330 308 S 470 268, 520 222 S 580 200, 600 192" fill="none" stroke="#0bbcae" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="sm-corridor">
+                <path d="M48 352 C 160 340, 260 330, 330 308 S 470 268, 520 222 S 580 200, 600 192" fill="none" stroke="url(#sm-g-corr)" stroke-opacity=".28" stroke-width="54" stroke-linecap="round"/>
+                <path d="M48 352 C 160 340, 260 330, 330 308 S 470 268, 520 222 S 580 200, 600 192" fill="none" stroke="#0a8a80" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"/>
+                <text class="sm-label" x="160" y="378">zoekgebied</text>
+              </g>
 
               <!-- lagen -->
               <g class="sm-layer" data-layer="archeo">
-                <path d="M300 150 C 360 128 452 138 470 190 C 482 240 444 302 382 306 C 322 308 290 252 300 150Z" fill="#8b5e3c" fill-opacity=".22" stroke="#8b5e3c" stroke-width="1.5"/>
-                <path d="M30 330 C 90 318 180 312 220 322 C 230 360 160 388 60 390 C 30 380 24 350 30 330Z" fill="#8b5e3c" fill-opacity=".1" stroke="#8b5e3c" stroke-width="1" stroke-dasharray="4 3"/>
-                <text class="sm-label sm-l-archeo" x="318" y="132">hoge verwachting</text>
-                <text class="sm-label sm-l-archeo" x="70" y="386">middelhoog</text>
-                <g class="sm-veld" fill="#fff" stroke="#8b5e3c" stroke-width="2">
-                  <rect x="386" y="282" width="8" height="8"/><rect x="414" y="275" width="8" height="8"/><rect x="442" y="268" width="8" height="8"/>
+                <path d="M30 330 C 90 318 180 312 220 322 C 230 360 160 388 60 390 C 30 380 24 350 30 330Z" fill="#c47a42" fill-opacity=".16" stroke="#a0582a" stroke-width="1.2" stroke-dasharray="5 3"/>
+                <path d="M300 150 C 360 128 452 138 470 190 C 482 240 444 302 382 306 C 322 308 290 252 300 150Z" fill="url(#sm-g-archeo)" stroke="#a0582a" stroke-width="2"/>
+                <text class="sm-label" x="318" y="128">hoge verwachting</text>
+                <text class="sm-label" x="70" y="388">middelhoog</text>
+                <g class="sm-veld" fill="#fff" stroke="#a0582a" stroke-width="2.2" filter="url(#sm-shadow)">
+                  <rect x="385" y="281" width="9" height="9" rx="1.5"/><rect x="413" y="274" width="9" height="9" rx="1.5"/><rect x="441" y="267" width="9" height="9" rx="1.5"/>
                 </g>
               </g>
 
               <g class="sm-layer" data-layer="ooo">
-                <ellipse cx="288" cy="316" rx="72" ry="48" fill="url(#sm-hatch-ooo)" stroke="#d1495b" stroke-width="1.5"/>
-                <text class="sm-label sm-l-ooo" x="300" y="382">CE-verdacht</text>
+                <ellipse cx="288" cy="316" rx="72" ry="48" fill="url(#sm-g-ooo)"/>
+                <ellipse cx="288" cy="316" rx="72" ry="48" fill="url(#sm-hatch-ooo)" stroke="#c42b3a" stroke-width="2"/>
+                <text class="sm-label" x="300" y="380">CE-verdacht</text>
                 <g class="sm-veld">
-                  <path d="M222 328 L262 322 L312 312 L352 300" fill="none" stroke="#d1495b" stroke-opacity=".45" stroke-width="14" stroke-linecap="round"/>
-                  <text class="sm-label sm-l-ooo" x="288" y="352">detectie</text>
+                  <path d="M222 328 L262 322 L312 312 L352 300" fill="none" stroke="#e5484d" stroke-opacity=".55" stroke-width="16" stroke-linecap="round"/>
+                  <path d="M222 328 L262 322 L312 312 L352 300" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="3 4"/>
+                  <text class="sm-label" x="226" y="352">detectie</text>
                 </g>
               </g>
 
               <g class="sm-layer" data-layer="bodem">
-                <rect x="368" y="296" width="46" height="30" fill="url(#sm-hatch-bodem)" stroke="#a86408" stroke-width="1.5"/>
-                <text class="sm-label sm-l-bodem" x="391" y="340">v.m. tankstation</text>
-                <path d="M150 300 L172 392" fill="none" stroke="#a86408" stroke-width="2.5" stroke-dasharray="5 4"/>
-                <text class="sm-label sm-l-bodem" x="136" y="292">gedempte sloot</text>
-                <g class="sm-veld" fill="#fff" stroke="#a86408" stroke-width="2">
-                  <circle cx="380" cy="300" r="4"/><circle cx="402" cy="296" r="4"/><circle cx="160" cy="339" r="4"/>
-                  <circle cx="96" cy="347" r="4"/><circle cx="228" cy="327" r="4"/><circle cx="470" cy="276" r="4"/><circle cx="548" cy="218" r="4"/>
+                <rect x="368" y="296" width="46" height="30" rx="3" fill="url(#sm-g-bodem)"/>
+                <rect x="368" y="296" width="46" height="30" rx="3" fill="url(#sm-hatch-bodem)" stroke="#b45309" stroke-width="2"/>
+                <text class="sm-label" x="430" y="346">v.m. tankstation</text>
+                <path d="M150 300 L172 392" fill="none" stroke="#f5a623" stroke-opacity=".35" stroke-width="9" stroke-linecap="round"/>
+                <path d="M150 300 L172 392" fill="none" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 4"/>
+                <text class="sm-label" x="128" y="290">gedempte sloot</text>
+                <g class="sm-veld" fill="#f5a623" stroke="#fff" stroke-width="2" filter="url(#sm-shadow)">
+                  <circle cx="380" cy="300" r="4.5"/><circle cx="402" cy="296" r="4.5"/><circle cx="160" cy="339" r="4.5"/>
+                  <circle cx="96" cy="347" r="4.5"/><circle cx="228" cy="327" r="4.5"/><circle cx="470" cy="276" r="4.5"/><circle cx="548" cy="218" r="4.5"/>
                 </g>
               </g>
 
               <g class="sm-layer" data-layer="flora">
-                <g stroke="#2fbf71" stroke-width="3.5" stroke-linecap="round">
-                  <line x1="125" y1="316" x2="115" y2="362"/><line x1="205" y1="304" x2="195" y2="352"/>
-                  <line x1="345" y1="284" x2="335" y2="330"/><line x1="445" y1="252" x2="435" y2="298"/>
+                <g stroke="#2fbf71" stroke-linecap="round">
+                  <g stroke-width="10" stroke-opacity=".28">
+                    <line x1="125" y1="316" x2="115" y2="362"/><line x1="205" y1="304" x2="195" y2="352"/><line x1="345" y1="284" x2="335" y2="330"/><line x1="445" y1="252" x2="435" y2="298"/>
+                  </g>
+                  <g stroke-width="3.5">
+                    <line x1="125" y1="316" x2="115" y2="362"/><line x1="205" y1="304" x2="195" y2="352"/><line x1="345" y1="284" x2="335" y2="330"/><line x1="445" y1="252" x2="435" y2="298"/>
+                  </g>
                 </g>
-                <g fill="#2fbf71" fill-opacity=".8">
-                  <circle cx="440" cy="238" r="5"/><circle cx="454" cy="235" r="5"/><circle cx="468" cy="232" r="5"/><circle cx="482" cy="229" r="5"/><circle cx="496" cy="226" r="5"/><circle cx="510" cy="223" r="5"/>
+                <g fill="#2fbf71" stroke="#08774a" stroke-width="1">
+                  <circle cx="440" cy="238" r="5.5"/><circle cx="454" cy="235" r="5.5"/><circle cx="468" cy="232" r="5.5"/><circle cx="482" cy="229" r="5.5"/><circle cx="496" cy="226" r="5.5"/><circle cx="510" cy="223" r="5.5"/>
                 </g>
-                <text class="sm-label sm-l-flora" x="476" y="212">houtwal</text>
-                <text class="sm-label sm-l-flora" x="205" y="374">watergangen</text>
-                <g class="sm-veld" fill="#fff" stroke="#08774a" stroke-width="2">
-                  <path d="M120 326 l6 10 h-12z"/><path d="M200 314 l6 10 h-12z"/><path d="M440 262 l6 10 h-12z"/>
+                <text class="sm-label" x="476" y="210">houtwal</text>
+                <text class="sm-label" x="210" y="374">watergangen</text>
+                <g class="sm-veld" fill="#2fbf71" stroke="#fff" stroke-width="1.8" filter="url(#sm-shadow)">
+                  <path d="M120 324 l7 12 h-14z"/><path d="M200 312 l7 12 h-14z"/><path d="M440 260 l7 12 h-14z"/>
                 </g>
               </g>
 
               <g class="sm-layer" data-layer="hydro">
-                <g fill="none" stroke="#2b7bb9" stroke-width="1.5" stroke-dasharray="7 4">
-                  <path d="M20 270 C 160 250, 330 210, 470 150"/>
-                  <path d="M20 372 C 200 350, 420 300, 640 240"/>
-                  <path d="M380 400 C 470 350, 560 310, 640 300"/>
+                <g fill="none" stroke="#3b8fd6" stroke-linecap="round">
+                  <g stroke-width="34" stroke-opacity=".1">
+                    <path d="M20 270 C 160 250, 330 210, 470 150"/><path d="M20 372 C 200 350, 420 300, 640 240"/><path d="M380 400 C 470 350, 560 310, 640 300"/>
+                  </g>
+                  <g stroke-width="1.6" stroke-dasharray="7 4">
+                    <path d="M20 270 C 160 250, 330 210, 470 150"/><path d="M20 372 C 200 350, 420 300, 640 240"/><path d="M380 400 C 470 350, 560 310, 640 300"/>
+                  </g>
                 </g>
-                <text class="sm-label sm-l-hydro" x="96" y="254">GHG -0,4 m</text>
-                <text class="sm-label sm-l-hydro" x="580" y="300">-1,2 m</text>
-                <g fill="#2b7bb9" fill-opacity=".14" stroke="#2b7bb9" stroke-width="1">
-                  <circle cx="262" cy="322" r="15"/><circle cx="312" cy="312" r="15"/><circle cx="486" cy="262" r="13"/><circle cx="512" cy="224" r="13"/>
+                <text class="sm-label" x="96" y="254">GHG -0,4 m</text>
+                <text class="sm-label" x="590" y="300">-1,2 m</text>
+                <g fill="url(#sm-g-pit)" stroke="#2b7bb9" stroke-width="1.2">
+                  <circle cx="262" cy="322" r="16"/><circle cx="312" cy="312" r="16"/><circle cx="486" cy="262" r="14"/><circle cx="512" cy="224" r="14"/>
                 </g>
-                <g fill="#2b7bb9">
-                  <path d="M246 296 l5 9 h-10z"/><path d="M326 288 l5 9 h-10z"/><path d="M472 244 l5 9 h-10z"/><path d="M60 330 l5 9 h-10z"/>
+                <g fill="#2b7bb9" stroke="#fff" stroke-width="1.5" filter="url(#sm-shadow)">
+                  <path d="M246 294 l6 10 h-12z"/><path d="M328 287 l6 10 h-12z"/><path d="M470 243 l6 10 h-12z"/><path d="M60 329 l6 10 h-12z"/>
                 </g>
               </g>
 
               <g class="sm-layer" data-layer="stikstof">
-                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="none" stroke="#7a4fd1" stroke-width="2.5"/>
+                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="#8b5cf6" fill-opacity=".1" stroke="#7a4fd1" stroke-width="3"/>
+                <circle cx="590" cy="196" r="92" fill="url(#sm-g-n2k)" fill-opacity=".55"/>
                 <g fill="none" stroke="#7a4fd1" stroke-width="1.5" stroke-dasharray="4 4">
                   <circle cx="590" cy="196" r="46"/><circle cx="590" cy="196" r="92"/>
                 </g>
-                <text class="sm-label sm-l-stikstof" x="534" y="300">AERIUS</text>
+                <text class="sm-label" x="516" y="150">AERIUS</text>
                 <g class="sm-veld">
-                  <circle cx="590" cy="196" r="92" fill="#7a4fd1" fill-opacity=".28" clip-path="url(#sm-n2000-clip)"/>
-                  <text class="sm-label sm-l-stikstof" x="566" y="104">depositie</text>
+                  <circle cx="590" cy="196" r="92" fill="url(#sm-g-n2k)" clip-path="url(#sm-n2000-clip)"/>
+                  <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="none" stroke="#7a4fd1" stroke-width="3" clip-path="url(#sm-n2000-clip)"/>
+                  <text class="sm-label" x="556" y="100">depositie</text>
                 </g>
               </g>
 
               <!-- tracé -->
               <g class="sm-trace">
+                <path d="M48 352 L180 338 L262 322 M312 312 L400 290 L486 262 M512 224 L560 210 L590 196" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
                 <path d="M48 352 L180 338 L262 322" fill="none" stroke="#0a3b3f" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M262 322 L312 312" fill="none" stroke="#0a3b3f" stroke-width="3" stroke-dasharray="5 4"/>
                 <path d="M312 312 L400 290 L486 262" fill="none" stroke="#0a3b3f" stroke-width="3.5" stroke-linejoin="round"/>
                 <path d="M486 262 L512 224" fill="none" stroke="#0a3b3f" stroke-width="3" stroke-dasharray="5 4"/>
                 <path d="M512 224 L560 210 L590 196" fill="none" stroke="#0a3b3f" stroke-width="3.5" stroke-linejoin="round"/>
-                <g class="sm-hdd-label"><text class="sm-label sm-l-trace" x="292" y="300">boring</text><text class="sm-label sm-l-trace" x="534" y="250">boring</text></g>
+                <g class="sm-hdd-label"><text class="sm-label" x="292" y="298">boring</text><text class="sm-label" x="540" y="250">boring</text></g>
               </g>
-              <g class="sm-stations">
-                <rect x="36" y="340" width="24" height="24" rx="3" fill="#0a3b3f"/><text x="48" y="356" class="sm-st">OS</text>
-                <rect x="578" y="184" width="24" height="24" rx="3" fill="#0a3b3f"/><text x="590" y="200" class="sm-st">SS</text>
+              <g class="sm-stations" filter="url(#sm-shadow)">
+                <rect x="34" y="338" width="28" height="28" rx="6" fill="#0a3b3f" stroke="#fff" stroke-width="2"/><text x="48" y="356" class="sm-st">OS</text>
+                <rect x="576" y="182" width="28" height="28" rx="6" fill="#0a3b3f" stroke="#fff" stroke-width="2"/><text x="590" y="200" class="sm-st">SS</text>
               </g>
             </svg>
             <figcaption class="study-map-caption" data-map-caption aria-live="polite">Voorbeeldtracé (fictief): alle lagen uit de bureaustudies en het veldonderzoek in het DO.</figcaption>
@@ -947,6 +985,6 @@
     </nav>
   </footer>
 
-  <script src="js/main.js?v=20261106-1"></script>
+  <script src="js/main.js?v=20261106-2"></script>
 </body>
 </html>
