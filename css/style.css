@@ -1487,8 +1487,51 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .phase-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px !important; }
 .phase-legend .ph { padding: 4px 10px; font-family: inherit; font-weight: 600; letter-spacing: 0; }
 .study-card p { margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.55; }
+/* Onderzoeken: kaart met datalagen */
+.study-card-lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 28px; align-items: start; }
+.study-card-lead .study-lead-copy p { flex: none; }
+.study-card[data-layer="bodem"] { --layer: #a86408; }
+.study-card[data-layer="ooo"] { --layer: #d1495b; }
+.study-card[data-layer="flora"] { --layer: #2fbf71; }
+.study-card[data-layer="archeo"] { --layer: #8b5e3c; }
+.study-card[data-layer="hydro"] { --layer: #2b7bb9; }
+.study-card[data-layer="stikstof"] { --layer: #7a4fd1; }
+.study-card[data-layer] h3::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 9px; border-radius: 2px; background: var(--layer); vertical-align: 1px; }
+.study-card[data-layer] { cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, opacity .3s ease, border-color .25s ease; }
+.study-card[data-layer]:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.study-card.is-active { border-top-color: var(--layer); transform: translateY(-4px); box-shadow: 0 0 0 2px var(--layer), var(--shadow); }
+.study-card.is-off { opacity: .55; }
+.phase-bar .ph { transition: box-shadow .25s ease; }
+.phase-bar .ph.is-now { box-shadow: inset 0 0 0 2px currentColor; }
+.map-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; }
+.map-controls[hidden] { display: none; }
+.phase-switch { display: inline-flex; padding: 3px; border-radius: 8px; background: var(--paper); border: 1px solid var(--line); }
+.phase-switch button, .map-replay { border: 0; background: transparent; font: 700 .78rem var(--font-mono); letter-spacing: .08em; color: var(--steel); cursor: pointer; }
+.phase-switch button { padding: 7px 16px; border-radius: 6px; transition: background .2s ease, color .2s ease; }
+.phase-switch button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+.map-replay { padding: 8px 12px; border-radius: 6px; color: var(--teal-dark); letter-spacing: .02em; }
+.map-replay:hover, .phase-switch button:hover:not([aria-pressed="true"]) { background: rgba(11, 188, 174, .12); }
+.study-map { margin: 0; }
+.study-map svg { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.study-map-caption { min-height: 3.1em; margin-top: 10px; color: var(--muted); font-size: .86rem; line-height: 1.5; }
+.study-map-caption strong { color: var(--navy); }
+.sm-label { font: 600 11px var(--font-mono); fill: #5f7874; text-anchor: middle; paint-order: stroke; stroke: rgba(255, 255, 255, .85); stroke-width: 3px; }
+.sm-l-bodem { fill: #a86408; } .sm-l-ooo { fill: #b83246; } .sm-l-flora { fill: #08774a; } .sm-l-archeo { fill: #7a4f2f; }
+.sm-l-hydro { fill: #2b7bb9; } .sm-l-stikstof { fill: #6a3fc1; } .sm-l-trace { fill: #0a3b3f; }
+.sm-st { font: 700 10px var(--font-mono); fill: #fff; text-anchor: middle; }
+.study-map .sm-layer, .study-map .sm-veld, .study-map .sm-corridor, .study-map .sm-trace, .study-map .sm-hdd-label { transition: opacity .6s ease; }
+.study-map .sm-corridor { opacity: 0; stroke-opacity: .2; }
+.study-map[data-phase="so"] .sm-corridor { opacity: 1; }
+.study-map[data-phase="so"] .sm-trace { opacity: 0; }
+.study-map:not([data-phase="do"]) .sm-veld, .study-map:not([data-phase="do"]) .sm-hdd-label { opacity: 0; }
+.study-map.is-js .sm-layer { opacity: 0; }
+.study-map.is-js .sm-layer.is-on { opacity: 1; }
+.study-map.is-js .sm-layer.is-on.is-dim { opacity: .22; }
+@media (max-width: 1020px) { .study-card-lead { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) { .sm-label { font-size: 14px; } .study-card.is-active { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .study-map *, .study-card[data-layer] { transition: none !important; } }
 @media (max-width: 1020px) { .study-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 760px) { .study-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .study-grid { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Werkwijze: producten per fase en afstemmomenten ---------- */
 .step-products {

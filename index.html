@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261106-3">
+  <link rel="stylesheet" href="css/style.css?v=20261106-4">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -444,36 +444,178 @@
 
       <ol class="study-grid">
         <li class="study-card study-card-lead">
-          <h3>Bureaustudies vanaf het SO/VO</h3>
-          <p>Voor milieu, OOO, archeologie en ecologie starten we met bureaustudies op basis van het schets- en voorlopig ontwerp. Stikstof toetsen we in dezelfde fase al een eerste keer. Zo weten we vroeg waar veldonderzoek nodig is en waar niet. Voor geotechniek doen we een bureaustudie op basis van DINOloket en regelen we waar nodig ook de boringen en sonderingen.</p>
-          <p class="phase-legend"><span class="ph ph-b">bureaustudie of eerste toets</span><span class="ph ph-v">vervolgonderzoek en veldonderzoek waar nodig</span></p>
+          <div class="study-lead-copy">
+            <h3>Bureaustudies vanaf het SO/VO</h3>
+            <p>Voor milieu, OOO, archeologie en ecologie starten we met bureaustudies op basis van het schets- en voorlopig ontwerp. Stikstof toetsen we in dezelfde fase al een eerste keer. Zo weten we vroeg waar veldonderzoek nodig is en waar niet. Voor geotechniek doen we een bureaustudie op basis van DINOloket en regelen we waar nodig ook de boringen en sonderingen.</p>
+            <p class="phase-legend"><span class="ph ph-b">bureaustudie of eerste toets</span><span class="ph ph-v">vervolgonderzoek en veldonderzoek waar nodig</span></p>
+            <div class="map-controls" data-map-controls hidden>
+              <div class="phase-switch" role="group" aria-label="Ontwerpfase">
+                <button type="button" data-phase-btn="so">SO</button>
+                <button type="button" data-phase-btn="vo">VO</button>
+                <button type="button" data-phase-btn="do">DO</button>
+              </div>
+              <button type="button" class="map-replay" data-map-replay>&#9654; Afspelen</button>
+            </div>
+          </div>
+          <figure class="study-map" data-study-map data-phase="do">
+            <svg viewBox="0 0 640 400" role="img" aria-label="Voorbeeldtracé tussen onderstation en schakelstation met de datalagen uit de onderzoeken">
+              <defs>
+                <pattern id="sm-ditch" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(12)"><line x1="0" y1="0" x2="0" y2="24" stroke="#c9dccb" stroke-width="1.4"/></pattern>
+                <pattern id="sm-trees" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="3" fill="#b9d3ad"/><circle cx="11" cy="10" r="2.6" fill="#b2cea6"/></pattern>
+                <pattern id="sm-hatch-bodem" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#a86408" stroke-width="2"/></pattern>
+                <pattern id="sm-hatch-ooo" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#d1495b" stroke-width="1.6"/></pattern>
+                <clipPath id="sm-n2000-clip"><path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z"/></clipPath>
+              </defs>
+
+              <!-- ondergrond -->
+              <g class="sm-base">
+                <rect width="640" height="400" fill="#e8f0e2"/>
+                <g transform="rotate(12 320 200)" opacity=".9">
+                  <rect x="-60" y="-80" width="96" height="560" fill="#e1ebd8"/>
+                  <rect x="132" y="-80" width="72" height="560" fill="#edf3e7"/>
+                  <rect x="300" y="-80" width="120" height="560" fill="#e1ebd8"/>
+                  <rect x="516" y="-80" width="72" height="560" fill="#edf3e7"/>
+                </g>
+                <rect width="640" height="400" fill="url(#sm-ditch)"/>
+                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="#d3e5c8"/>
+                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="url(#sm-trees)"/>
+                <text class="sm-label" x="560" y="40">Natura 2000</text>
+                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="#b7d6e3" stroke-width="16"/>
+                <path d="M196 -10 C 236 120, 262 250, 318 410" fill="none" stroke="#a5cbdb" stroke-width="1"/>
+                <text class="sm-label" x="214" y="60" transform="rotate(72 214 60)">vaart</text>
+                <path d="M-10 318 C 180 300, 380 250, 650 200" fill="none" stroke="#c4cbc6" stroke-width="9"/>
+                <path d="M-10 318 C 180 300, 380 250, 650 200" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="6 6"/>
+                <text class="sm-label" x="318" y="256" transform="rotate(-11 318 256)">provinciale weg</text>
+                <g fill="#cdd3cf">
+                  <rect x="330" y="182" width="12" height="9"/><rect x="348" y="176" width="10" height="12"/><rect x="364" y="186" width="14" height="9"/>
+                  <rect x="384" y="170" width="11" height="11"/><rect x="398" y="190" width="13" height="9"/><rect x="342" y="200" width="12" height="10"/>
+                  <rect x="362" y="206" width="10" height="9"/><rect x="380" y="200" width="12" height="11"/><rect x="414" y="176" width="10" height="10"/>
+                  <rect x="420" y="198" width="12" height="9"/><rect x="398" y="214" width="11" height="9"/><rect x="352" y="160" width="12" height="9"/>
+                  <rect x="372" y="152" width="9" height="16" fill="#bcc4bf"/>
+                </g>
+                <text class="sm-label" x="414" y="140">dorpskern</text>
+              </g>
+
+              <!-- SO: zoekgebied -->
+              <path class="sm-corridor" d="M48 352 C 160 340, 260 330, 330 308 S 470 268, 520 222 S 580 200, 600 192" fill="none" stroke="#0bbcae" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- lagen -->
+              <g class="sm-layer" data-layer="archeo">
+                <path d="M300 150 C 360 128 452 138 470 190 C 482 240 444 302 382 306 C 322 308 290 252 300 150Z" fill="#8b5e3c" fill-opacity=".22" stroke="#8b5e3c" stroke-width="1.5"/>
+                <path d="M30 330 C 90 318 180 312 220 322 C 230 360 160 388 60 390 C 30 380 24 350 30 330Z" fill="#8b5e3c" fill-opacity=".1" stroke="#8b5e3c" stroke-width="1" stroke-dasharray="4 3"/>
+                <text class="sm-label sm-l-archeo" x="318" y="132">hoge verwachting</text>
+                <text class="sm-label sm-l-archeo" x="70" y="386">middelhoog</text>
+                <g class="sm-veld" fill="#fff" stroke="#8b5e3c" stroke-width="2">
+                  <rect x="386" y="282" width="8" height="8"/><rect x="414" y="275" width="8" height="8"/><rect x="442" y="268" width="8" height="8"/>
+                </g>
+              </g>
+
+              <g class="sm-layer" data-layer="ooo">
+                <ellipse cx="288" cy="316" rx="72" ry="48" fill="url(#sm-hatch-ooo)" stroke="#d1495b" stroke-width="1.5"/>
+                <text class="sm-label sm-l-ooo" x="300" y="382">CE-verdacht</text>
+                <g class="sm-veld">
+                  <path d="M222 328 L262 322 L312 312 L352 300" fill="none" stroke="#d1495b" stroke-opacity=".45" stroke-width="14" stroke-linecap="round"/>
+                  <text class="sm-label sm-l-ooo" x="288" y="352">detectie</text>
+                </g>
+              </g>
+
+              <g class="sm-layer" data-layer="bodem">
+                <rect x="368" y="296" width="46" height="30" fill="url(#sm-hatch-bodem)" stroke="#a86408" stroke-width="1.5"/>
+                <text class="sm-label sm-l-bodem" x="391" y="340">v.m. tankstation</text>
+                <path d="M150 300 L172 392" fill="none" stroke="#a86408" stroke-width="2.5" stroke-dasharray="5 4"/>
+                <text class="sm-label sm-l-bodem" x="136" y="292">gedempte sloot</text>
+                <g class="sm-veld" fill="#fff" stroke="#a86408" stroke-width="2">
+                  <circle cx="380" cy="300" r="4"/><circle cx="402" cy="296" r="4"/><circle cx="160" cy="339" r="4"/>
+                  <circle cx="96" cy="347" r="4"/><circle cx="228" cy="327" r="4"/><circle cx="470" cy="276" r="4"/><circle cx="548" cy="218" r="4"/>
+                </g>
+              </g>
+
+              <g class="sm-layer" data-layer="flora">
+                <g stroke="#2fbf71" stroke-width="3.5" stroke-linecap="round">
+                  <line x1="125" y1="316" x2="115" y2="362"/><line x1="205" y1="304" x2="195" y2="352"/>
+                  <line x1="345" y1="284" x2="335" y2="330"/><line x1="445" y1="252" x2="435" y2="298"/>
+                </g>
+                <g fill="#2fbf71" fill-opacity=".8">
+                  <circle cx="440" cy="238" r="5"/><circle cx="454" cy="235" r="5"/><circle cx="468" cy="232" r="5"/><circle cx="482" cy="229" r="5"/><circle cx="496" cy="226" r="5"/><circle cx="510" cy="223" r="5"/>
+                </g>
+                <text class="sm-label sm-l-flora" x="476" y="212">houtwal</text>
+                <text class="sm-label sm-l-flora" x="205" y="374">watergangen</text>
+                <g class="sm-veld" fill="#fff" stroke="#08774a" stroke-width="2">
+                  <path d="M120 326 l6 10 h-12z"/><path d="M200 314 l6 10 h-12z"/><path d="M440 262 l6 10 h-12z"/>
+                </g>
+              </g>
+
+              <g class="sm-layer" data-layer="hydro">
+                <g fill="none" stroke="#2b7bb9" stroke-width="1.5" stroke-dasharray="7 4">
+                  <path d="M20 270 C 160 250, 330 210, 470 150"/>
+                  <path d="M20 372 C 200 350, 420 300, 640 240"/>
+                  <path d="M380 400 C 470 350, 560 310, 640 300"/>
+                </g>
+                <text class="sm-label sm-l-hydro" x="96" y="254">GHG -0,4 m</text>
+                <text class="sm-label sm-l-hydro" x="580" y="300">-1,2 m</text>
+                <g fill="#2b7bb9" fill-opacity=".14" stroke="#2b7bb9" stroke-width="1">
+                  <circle cx="262" cy="322" r="15"/><circle cx="312" cy="312" r="15"/><circle cx="486" cy="262" r="13"/><circle cx="512" cy="224" r="13"/>
+                </g>
+                <g fill="#2b7bb9">
+                  <path d="M246 296 l5 9 h-10z"/><path d="M326 288 l5 9 h-10z"/><path d="M472 244 l5 9 h-10z"/><path d="M60 330 l5 9 h-10z"/>
+                </g>
+              </g>
+
+              <g class="sm-layer" data-layer="stikstof">
+                <path d="M468 -2 L642 -2 L642 122 C602 128 560 108 530 82 C505 60 484 30 468 -2Z" fill="none" stroke="#7a4fd1" stroke-width="2.5"/>
+                <g fill="none" stroke="#7a4fd1" stroke-width="1.5" stroke-dasharray="4 4">
+                  <circle cx="590" cy="196" r="46"/><circle cx="590" cy="196" r="92"/>
+                </g>
+                <text class="sm-label sm-l-stikstof" x="534" y="300">AERIUS</text>
+                <g class="sm-veld">
+                  <circle cx="590" cy="196" r="92" fill="#7a4fd1" fill-opacity=".28" clip-path="url(#sm-n2000-clip)"/>
+                  <text class="sm-label sm-l-stikstof" x="566" y="104">depositie</text>
+                </g>
+              </g>
+
+              <!-- tracé -->
+              <g class="sm-trace">
+                <path d="M48 352 L180 338 L262 322" fill="none" stroke="#0a3b3f" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M262 322 L312 312" fill="none" stroke="#0a3b3f" stroke-width="3" stroke-dasharray="5 4"/>
+                <path d="M312 312 L400 290 L486 262" fill="none" stroke="#0a3b3f" stroke-width="3.5" stroke-linejoin="round"/>
+                <path d="M486 262 L512 224" fill="none" stroke="#0a3b3f" stroke-width="3" stroke-dasharray="5 4"/>
+                <path d="M512 224 L560 210 L590 196" fill="none" stroke="#0a3b3f" stroke-width="3.5" stroke-linejoin="round"/>
+                <g class="sm-hdd-label"><text class="sm-label sm-l-trace" x="292" y="300">boring</text><text class="sm-label sm-l-trace" x="534" y="250">boring</text></g>
+              </g>
+              <g class="sm-stations">
+                <rect x="36" y="340" width="24" height="24" rx="3" fill="#0a3b3f"/><text x="48" y="356" class="sm-st">OS</text>
+                <rect x="578" y="184" width="24" height="24" rx="3" fill="#0a3b3f"/><text x="590" y="200" class="sm-st">SS</text>
+              </g>
+            </svg>
+            <figcaption class="study-map-caption" data-map-caption aria-live="polite">Voorbeeldtracé (fictief): alle lagen uit de bureaustudies en het veldonderzoek in het DO.</figcaption>
+          </figure>
         </li>
-        <li class="study-card">
+        <li class="study-card" data-layer="bodem">
           <h3>Bodem &amp; Milieu</h3>
           <p>Historisch vooronderzoek, daarna verkennend bodemonderzoek, PFAS en de afvoer of het hergebruik van grond.</p>
           <span class="phase-bar" aria-label="bureaustudie in SO en VO, vervolgonderzoek en veldonderzoek in DO"><span class="ph ph-b">SO</span><span class="ph ph-b">VO</span><span class="ph ph-v">DO</span></span>
         </li>
-        <li class="study-card">
+        <li class="study-card" data-layer="ooo">
           <h3>OOO</h3>
           <p>Opsporing van Ontplofbare Oorlogsresten: vooronderzoek en waar nodig detectie voordat er gegraven wordt.</p>
           <span class="phase-bar" aria-label="bureaustudie in SO en VO, vervolgonderzoek en veldonderzoek in DO"><span class="ph ph-b">SO</span><span class="ph ph-b">VO</span><span class="ph ph-v">DO</span></span>
         </li>
-        <li class="study-card">
+        <li class="study-card" data-layer="flora">
           <h3>Flora &amp; Fauna</h3>
           <p>Quickscan en waar nodig nader onderzoek en ontheffing.</p>
           <span class="phase-bar" aria-label="bureaustudie in SO en VO, vervolgonderzoek en veldonderzoek in DO"><span class="ph ph-b">SO</span><span class="ph ph-b">VO</span><span class="ph ph-v">DO</span></span>
         </li>
-        <li class="study-card">
+        <li class="study-card" data-layer="archeo">
           <h3>Archeologie</h3>
           <p>Bureauonderzoek en waar nodig booronderzoek, afgestemd met de gemeente.</p>
           <span class="phase-bar" aria-label="bureaustudie in SO en VO, vervolgonderzoek en veldonderzoek in DO"><span class="ph ph-b">SO</span><span class="ph ph-b">VO</span><span class="ph ph-v">DO</span></span>
         </li>
-        <li class="study-card">
+        <li class="study-card" data-layer="hydro">
           <h3>Hydrologie</h3>
           <p>Grondwater en bemaling. Dit vraagt metingen in het veld en gebeurt daarom meestal in de DO-fase.</p>
           <span class="phase-bar" aria-label="vervolgonderzoek en veldonderzoek in DO"><span class="ph ph--">SO</span><span class="ph ph--">VO</span><span class="ph ph-v">DO</span></span>
         </li>
-        <li class="study-card">
+        <li class="study-card" data-layer="stikstof">
           <h3>Stikstof &amp; Natura 2000</h3>
           <p>Eerste AERIUS-toets op basis van het SO/VO, later uitgewerkt tot de depositieberekening voor de aanleg.</p>
           <span class="phase-bar" aria-label="bureaustudie in SO en VO, vervolgonderzoek en veldonderzoek in DO"><span class="ph ph-b">SO</span><span class="ph ph-b">VO</span><span class="ph ph-v">DO</span></span>
@@ -805,6 +947,6 @@
     </nav>
   </footer>
 
-  <script src="js/main.js?v=20261028-1"></script>
+  <script src="js/main.js?v=20261106-1"></script>
 </body>
 </html>
