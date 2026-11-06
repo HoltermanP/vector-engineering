@@ -503,7 +503,9 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
 .check-list li::before { content: ""; position: absolute; left: 0; top: .72em; width: 12px; height: 2px; background: var(--amber); }
 .check-list li strong { color: var(--navy); }
 .expertise-visual { margin: 0; }
-.expertise-visual img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.expertise-visual img,
+.expertise-visual video { display: block; width: 100%; height: auto; border-radius: 6px; }
+.expertise-visual video { aspect-ratio: 16 / 9; background: #1d2a2e; }
 
 /* ZRO-voorbeeld: kaart met statusstappen per perceel, zonder bedragen */
 .zro-map { position: relative; border-radius: 6px; overflow: hidden; }
