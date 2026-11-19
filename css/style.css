@@ -1648,3 +1648,70 @@ h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 600; line-height: 1.3
   .process-item > p { margin-bottom: 0; }
   .process-item > .step-products { align-self: start; margin-top: 20px; }
 }
+
+/* ---------- Typografie: rustigere koppen, nette regelafbreking, leesbare alinea's ---------- */
+h1, h2, h3, .safety-foot, .collab-cta p { text-wrap: balance; }
+p, li, dd, figcaption { text-wrap: pretty; }
+
+h1 {
+  max-width: 17em;
+  margin-bottom: 22px;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -.028em;
+}
+
+h2 {
+  max-width: 24em;
+  margin-bottom: 18px;
+  font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.15rem);
+  line-height: 1.16;
+  letter-spacing: -.022em;
+}
+
+h3 { font-size: 1.1rem; }
+
+.hero { grid-template-columns: minmax(0, 1fr) 400px; }
+.hero h1 { max-width: 16em; }
+.hero-intro { max-width: 34em; font-size: 1.08rem; line-height: 1.65; }
+
+.section-heading { max-width: var(--content); }
+.section-heading > p,
+.section > .section-heading + p,
+.intro p,
+.expertise-section p,
+.people-section .section-heading p,
+.studies-section .section-heading p { max-width: 42em; }
+
+.section-kicker { margin-bottom: 14px; }
+p { margin-bottom: 1.05em; }
+p:last-child { margin-bottom: 0; }
+
+.collab-card h2 { max-width: 22em; font-size: clamp(1.6rem, 1.1rem + 1.7vw, 2.4rem); }
+.safety-head h2 { max-width: 20em; }
+.process-band h2 { max-width: 24em; }
+
+@media (max-width: 1020px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero h1 { max-width: 18em; }
+}
+
+@media (max-width: 680px) {
+  h1 { font-size: clamp(1.85rem, 8vw, 2.2rem); line-height: 1.1; }
+  h2 { font-size: clamp(1.4rem, 6vw, 1.65rem); line-height: 1.2; }
+  .collab-card h2 { font-size: clamp(1.45rem, 6.4vw, 1.75rem); }
+  .hero-intro { font-size: 1.02rem; }
+}
+
+/* hero-logo mag de kop niet overlappen op smalle schermen */
+@media (max-width: 1020px) {
+  .hero-logo { top: auto; bottom: 18%; right: 8%; opacity: .9; width: clamp(64px, 12vw, 96px); }
+}
+@media (max-width: 680px) { .hero-logo { display: none; } }
+
+/* footer: links uitgelijnd met de rest van de site */
+.site-footer {
+  padding-left: max(var(--gutter), calc((100% - var(--content)) / 2));
+  padding-right: max(var(--gutter), calc((100% - var(--content)) / 2));
+}
+.site-footer > * { margin-left: 0; margin-right: 0; max-width: none; }
